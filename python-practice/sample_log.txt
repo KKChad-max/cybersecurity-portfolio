@@ -1,0 +1,8 @@
+INFO: User logged in
+WARNING: Disk space low
+ERROR: Connection timeout
+INFO: File uploaded
+ERROR: Authentication failed
+INFO: Logout successful
+ERROR: Database unreachable
+INFO: Health check passed
