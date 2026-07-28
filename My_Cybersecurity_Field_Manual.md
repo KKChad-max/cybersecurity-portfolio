@@ -1,173 +1,189 @@
-🧠 My Cybersecurity Field Manual: OverTheWire Bandit 0–20
-Module 1: Git & GitHub Foundations (The Portfolio Backbone)
-Commands Used:
-bash
-# Configure your identity (one-time setup)
-git config --global user.name "Your Name"
-git config --global user.email "your-email@example.com"
+# 🧠 My Cybersecurity Field Manual
 
-# Clone a remote repository to your local machine
-git clone https://github.com/your-username/repo-name.git
+> **Author:** Chadrack Kalongo  
+> **Last Updated:** July 2026  
+> **Context:** OverTheWire Bandit 0–20 & Python Automation
 
-# Check the status of changes
-git status
+---
 
-# Stage all changes in the current folder
-git add .
+## 📌 Table of Contents
+1. [Git & GitHub Foundations](#-git--github-foundations)
+2. [Linux Terminal & SSH Basics](#-linux-terminal--ssh-basics)
+3. [Bandit Commands Reference (0–20)](#-bandit-commands-reference-020)
+   - [Finding & Reading Files](#finding--reading-files)
+   - [Searching & Parsing Text](#searching--parsing-text)
+   - [Network & Ports](#network--ports)
+   - [Encoding & Compression](#encoding--compression)
+   - [SSH Keys & Privilege Escalation](#ssh-keys--privilege-escalation)
+4. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
+5. [Python Automation Toolkit](#-python-automation-toolkit)
+6. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
-# Commit staged changes with a message
-git commit -m "Describe your changes here"
+---
 
-# Upload local commits to GitHub
-git push
+## 🗂️ Git & GitHub Foundations
 
-# Remove a file from the repo
-git rm filename.txt
-git commit -m "removed file"
-git push
-🚨 The Token Trap:
-Challenge: GitHub no longer accepts your account password for git push.
+| Command | What it does |
+| :--- | :--- |
+| `git config --global user.name "Your Name"` | Set your identity (one-time setup). |
+| `git config --global user.email "your@email.com"` | Set your email (one-time setup). |
+| `git clone https://github.com/.../repo.git` | Download a remote repo to your machine. |
+| `git status` | Check what has changed. |
+| `git add .` | Stage all changes in the current folder. |
+| `git commit -m "message"` | Save staged changes with a comment. |
+| `git push` | Upload commits to GitHub. |
+| `git rm filename.txt` | Remove a file from the repo. |
 
-Solution: Generate a Personal Access Token (Settings → Developer settings → Tokens). Copy it immediately and use it as the password when git push prompts you. Save it in a secure notepad while working.
+### 🚨 The Token Trap
+- **Problem:** GitHub no longer accepts your normal password for `git push`.
+- **Solution:** Generate a **Personal Access Token** (Settings → Developer settings → Tokens).  
+  Use that token as the password when `git push` asks for it.
 
-Module 2: Linux Terminal & SSH Basics
-Commands Used:
-bash
-# Navigate directories
-cd ~/Desktop          # Go to Desktop
-cd ..                 # Go up one level
-cd /tmp               # Go to root temp directory
+---
 
-# List files
-ls                    # List basic
-ls -la                # List all (including hidden) with details
+## 🖥️ Linux Terminal & SSH Basics
 
-# Read files
-cat filename.txt      # Print entire file to screen
+| Command | What it does |
+| :--- | :--- |
+| `cd ~/Desktop` | Navigate to your Desktop. |
+| `cd ..` | Move up one folder level. |
+| `ls -la` | List all files (including hidden) with details. |
+| `cat filename.txt` | Print the file content to the screen. |
+| `touch filename.txt` | Create an empty file. |
+| `cp source.txt dest.txt` | Copy a file. |
+| `mv old.txt new.txt` | Rename or move a file. |
+| `chmod 600 filename` | Make a file only readable/writable by you. |
 
-# Create empty file
-touch filename.txt
+### 🚨 The "Silent Password" Trap
+- **Problem:** When SSH asks for a password, **nothing appears** on screen (no dots, no asterisks).
+- **Solution:** Type the password blindly and press Enter. Your keystrokes are being registered.
 
-# Copy a file
-cp source.txt destination.txt
+---
 
-# Move or rename a file
-mv oldname.txt newname.txt
+## ⚙️ Bandit Commands Reference (0–20)
 
-# Set file permissions (read/write/execute)
-chmod 600 filename    # Owner can read/write, nobody else
-🚨 The "Silent Password" Trap:
-Challenge: When SSH asks for a password, no characters appear as you type (no dots, no asterisks). It looks frozen.
+### Finding & Reading Files
+| Command | What it does |
+| :--- | :--- |
+| `cat ./-` | Read a file literally named `-` (needs `./`). |
+| `cat "./--spaces in this filename--"` | Read a file with spaces and double-dashes. |
+| `file ./*` | Show the *type* of every file in the current folder. |
+| `find . -size 1033c ! -executable` | Find non-executable files of exact size 1033 bytes. |
+| `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null` | Global search, hiding permission errors. |
 
-Solution: Type the password blindly and press Enter. It is registering your keystrokes; it's just hidden for security.
+### Searching & Parsing Text
+| Command | What it does |
+| :--- | :--- |
+| `grep "millionth" data.txt` | Find lines containing the word "millionth". |
+| `sort data.txt \| uniq -u` | Show only the line that appears exactly once. |
+| `strings data.txt \| grep "="` | Extract readable text from binary, filter for `=`. |
+| `diff file1 file2` | Show the differences between two files. |
 
-Module 3: Bandit Commands Reference (0–20)
-Finding & Reading Files
-Command	What it does
-cat ./-	Read a file named - (needs ./ to avoid command flags).
-cat "./--spaces in this filename--"	Read a file with spaces and double-dashes.
-cat ...Hiding-From-You	Read a file with three dots (just literal characters).
-file ./*	Identifies the type of every file in a folder (ASCII, binary, compressed).
-find . -size 1033c ! -executable	Find a non-executable file exactly 1033 bytes in current folder.
-find / -user bandit7 -group bandit6 -size 33c 2>/dev/null	Find a specific file on the whole system, hiding permission errors.
-Searching & Parsing Text
-Command	What it does
-grep "millionth" data.txt	Find lines containing the word "millionth".
-sort data.txt | uniq -u	Sort lines, then show only the line that appears once.
-strings data.txt | grep "="	Extract human-readable text from binary, filter for =.
-diff file1 file2	Compare two files and show differences.
-Network & Ports
-Command	What it does
-ssh banditX@host -p 2220	Connect securely to a remote server.
-echo "password" | nc localhost 30000	Send a password to a local port using Netcat.
-openssl s_client -connect localhost:30001	Connect to an SSL/TLS encrypted port.
-nmap -sV -p 31000-32000 localhost	Scan local ports 31000-32000 to find services.
-Encoding & Compression
-Command	What it does
-cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'	Decode ROT13 cipher (rotate letters by 13).
-base64 -d data.txt	Decode a Base64 encoded file.
-xxd -r data.txt > file1	Reverse a hexdump.
-gzip -d file1.gz	Decompress a Gzip archive.
-bzip2 -d file1.bz2	Decompress a Bzip2 archive.
-tar xf file1.tar	Extract a Tar archive.
-SSH Keys & Privilege Escalation
-Command	What it does
-chmod 600 sshkey.private	Make a private key readable only by owner (SSH demands this).
-ssh -i sshkey.private user@host -p 2220	Log in using a private key file.
-./bandit20-do cat /etc/bandit_pass/bandit20	Run a command as another user using a SetUID binary.
-ssh bandit18@host -p 2220 "cat readme"	Run a command on the remote server without loading .bashrc.
-Module 4: The Troubleshooting Hall of Fame (The Struggles)
-1. The SSH Key libcrypto Error
-Situation: Tried ssh -i bandit14_key.txt bandit14@... on my Windows Git Bash. Got error in libcrypto: unsupported.
+### Network & Ports
+| Command | What it does |
+| :--- | :--- |
+| `ssh banditX@host -p 2220` | Connect to a remote OverTheWire server. |
+| `echo "password" \| nc localhost 30000` | Send data to a local port via Netcat. |
+| `openssl s_client -connect localhost:30001` | Connect to an SSL/TLS encrypted port. |
+| `nmap -sV -p 31000-32000 localhost` | Scan local ports to find running services. |
 
-Why: My local Git Bash SSH client was too old to parse the new OpenSSH key format.
+### Encoding & Compression
+| Command | What it does |
+| :--- | :--- |
+| `cat data.txt \| tr 'A-Za-z' 'N-ZA-Mn-za-m'` | Decode ROT13 (rotate letters by 13). |
+| `base64 -d data.txt` | Decode a Base64 file. |
+| `xxd -r data.txt > file1` | Reverse a hexdump. |
+| `gzip -d file1.gz` | Decompress Gzip. |
+| `bzip2 -d file1.bz2` | Decompress Bzip2. |
+| `tar xf file1.tar` | Extract a Tar archive. |
 
-Solution: Wrote a Python script using the paramiko library to load the key and fetch the password programmatically. This bypassed the local SSH client entirely.
+### SSH Keys & Privilege Escalation
+| Command | What it does |
+| :--- | :--- |
+| `chmod 600 sshkey.private` | Make a private key secure (SSH demands this). |
+| `ssh -i sshkey.private user@host -p 2220` | Log in using a private key. |
+| `./bandit20-do cat /etc/bandit_pass/bandit20` | Run a command as another user via SetUID. |
+| `ssh bandit18@host -p 2220 "cat readme"` | Run a remote command without loading `.bashrc`. |
 
-Python Template (Memory Aid):
+---
 
-python
+## 🧩 The Troubleshooting Hall of Fame (The Struggles)
+
+### 1. The SSH Key `libcrypto` Error
+- **Situation:** `ssh -i key.txt user@host` gave `error in libcrypto: unsupported` on Windows Git Bash.
+- **Why:** My local SSH client was too old for the new OpenSSH key format.
+- **Solution:** Wrote a Python script using `paramiko` to load the key and fetch the password.
+
+**Python template (memory aid):**
+```python
 import paramiko
 key_path = r"C:\path\to\key.txt"
 client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 private_key = paramiko.RSAKey.from_private_key_file(key_path)
 client.connect(hostname="bandit.labs.overthewire.org", port=2220, username="banditX", pkey=private_key)
-# Run a command...
+# Run your command...
+
 2. The localhost Connection Block
-Situation: Tried ssh bandit14@localhost -p 2220 from inside a bandit server to jump to the next level. Got "Connecting from localhost is blocked".
+Situation: Tried ssh bandit14@localhost -p 2220 from inside a server. Got "Connecting from localhost is blocked".
 
-Why: OverTheWire blocks password logins from localhost to conserve resources and force you to use SSH keys.
+Why: OverTheWire blocks password logins from localhost to force SSH key usage.
 
-Solution: Always jump to the next level from my local machine (outside SSH), or use the -i key method without interactive passwords.
+Solution: Always jump to the next level from my local machine (outside SSH), or use the key method without interactive passwords.
 
-3. The diff Mix-up (Level 17 → 18)
-Situation: Ran diff passwords.new passwords.old. Output showed < OLD and > NEW.
 
-Why: I tried the line marked with > (thinking it was "greater/newer"). It failed.
+### 2. The `localhost` Connection Block
+- **Situation:** Tried `ssh bandit14@localhost -p 2220` from inside a server. Got "Connecting from localhost is blocked".
+- **Why:** OverTheWire blocks password logins from localhost to force SSH key usage.
+- **Solution:** Always jump to the next level from my **local machine** (outside SSH), or use the key method without interactive passwords.
 
-Solution: Critical Rule: diff file1 file2 means file1 is on the left (<). Since passwords.new is on the left, the password is the line after <!
+---
 
-Takeaway: Always read the output context: < belongs to the first file in the command.
+### 3. The `diff` Mix-up (Level 17 → 18)
+- **Situation:** Ran `diff passwords.new passwords.old`. Output showed `< OLD` and `> NEW`.
+- **My mistake:** I tried the line with `>` (thinking "greater" = newer). It failed.
+- **Rule:** `diff file1 file2` → `file1` is on the left (`<`). Since `passwords.new` is on the left, the password is the line after `<`!
+- **Takeaway:** Always read the context of the output carefully.
 
-4. The .bashrc Instant Logout (Level 18)
-Situation: Logged into bandit18 and got kicked out immediately.
+---
 
-Why: The .bashrc file was modified to disconnect users.
+### 4. The `.bashrc` Instant Logout (Level 18)
+- **Situation:** Logged into `bandit18` and got kicked out immediately.
+- **Why:** The `.bashrc` file was modified to disconnect users.
+- **Solution:** Bypass the login shell by running a command remotely:  
+  `ssh bandit18@host -p 2220 "cat readme"`.
 
-Solution: Bypass the login shell by running a command remotely: ssh bandit18@host -p 2220 "cat readme".
+---
 
-Module 5: Python Automation Toolkit
-I wrote these scripts to save time and handle tasks too complex for one-liners.
+## 🐍 Python Automation Toolkit
 
-1. file_renamer.py
-Use case: Prepend a prefix (e.g., backup_) to every file in a folder.
+| Script | What it does |
+| :--- | :--- |
+| `file_renamer.py` | Add a prefix (`backup_`) to every file in a folder using `os.listdir()` and `os.rename()`. |
+| `text_parser.py` | Count how many lines contain "ERROR" using `open().readlines()` and `if word in line`. |
+| `folder_scanner.py` | Walk through folders and count file extensions using `os.walk()` and `os.path.splitext()`. |
+| `fetch_banditX_password.py` | Use `paramiko` to authenticate with an SSH key when the local CLI fails. |
 
-Core concept: os.listdir() and os.rename().
+---
 
-2. text_parser.py
-Use case: Count how many lines in a log file contain "ERROR".
+## 💡 The "Pro" Takeaways (What Actually Changed in My Brain)
 
-Core concept: open(file).readlines() and if word in line.
+1. **No Output = Success.**  
+   In Linux, silence means "it worked". Don't panic if you don't see a confirmation message.
 
-3. folder_scanner.py
-Use case: Scan a folder (and subfolders) and report how many .txt, .py, etc., exist.
+2. **Verification is King.**  
+   Always `ls` before `cat`. Always `file` before decompressing. Never assume filenames.
 
-Core concept: os.walk() and os.path.splitext().
+3. **When to Quit Fighting.**  
+   If a CLI tool gives you a weird error after 15 minutes, switch to Python. Don't brute-force the terminal.
 
-4. fetch_banditX_password.py (using paramiko)
-Use case: When Git Bash fails to read an SSH key, Python handles it flawlessly.
+4. **Hidden Characters are Real.**  
+   Copy-paste can add invisible newlines. If a password fails, try typing it manually.
 
-Core concept: Automating SSH authentication with code.
+5. **Python is Your Safety Net.**  
+   Tools like `paramiko` work on Windows, Mac, and Linux. Learning Python for automation makes you immune to local CLI inconsistencies.
 
-Module 6: The "Pro" Takeaways (What actually changed in my brain)
-No Output = Success: In Linux, if a command runs and prints nothing, it usually worked. Silence is good.
+---
 
-Verification is King: Always run ls to confirm the file exists before catting it. Always run file before decompressing.
-
-When to Quit Fighting: If a CLI tool gives you a weird error after 15 minutes, switch to Python or a different approach. Don't brute-force the terminal.
-
-Hidden Characters are Real: Copy-pasting can add invisible newlines. If a password fails, try typing it manually, even if it's long.
-
-Portability: Tools like paramiko work on Windows, Mac, and Linux. Learning Python for system automation makes you immune to local CLI inconsistencies.
+> *This manual was built from real struggles, late-night debugging, and one very persistent student. Keep it close — it will save you hours in the future.* 🔥
 
