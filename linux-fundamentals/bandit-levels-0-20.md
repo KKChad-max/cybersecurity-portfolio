@@ -118,11 +118,13 @@ Most of these mistakes came from rushing. The fix was always the same: **slow do
 - **Command:** Hexdump reversal (`xxd -r`), multiple decompressions (gzip, bzip2, tar)
 - **Password:** qQYQiHOBPR8zR61qxYqX45quvihF2uzk
 - **Reflection:** Reverse hexdump, then decompress through chain of file formats.
+![Decompressing the file chain in /tmp/mywork](images/Screenshot(29).png)
 
 ### Level 13 → 14
 - **Command:** `ssh -i sshkey.private bandit14@localhost -p 2220`
 - **Password:** aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
 - **Reflection:** SSH key authentication instead of password.
+![Permission denied error on sshkey.private](images/Screenshot(31).png)
 
 ### Level 14 → 15
 - **Command:** `echo "password" | nc localhost 30000`
@@ -143,6 +145,7 @@ Most of these mistakes came from rushing. The fix was always the same: **slow do
 - **Command:** `diff passwords.new passwords.old`
 - **Password:** OQxXZjELndr90zuhOTDYBEomI0SZITXI
 - **Reflection:** The line under `<` in the output was the correct password (since I compared new to old). I initially picked the wrong side but learned to read the context carefully!
+![The diff output showing the correct password](images/Screenshot(33).png)
 
 ### Level 18 → 19
 - **Command:** `ssh bandit18@... -p 2220 "cat readme"`
