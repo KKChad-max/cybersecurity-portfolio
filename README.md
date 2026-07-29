@@ -44,3 +44,9 @@ I maintain a personal **[My_Cybersecurity_Field_Manual.md](/My_Cybersecurity_Fie
 
 ## 🎯 Current Goal
 Building a strong foundation in network security, Linux, and Python to pursue a role as a **Security Analyst**. Next up: TryHackMe rooms and exploring defensive security tools on my Ubuntu VM.
+
+## 🙏 Acknowledgements
+
+- **[OverTheWire Bandit](https://overthewire.org/wargames/bandit/)** – For the incredible Linux wargame.
+- **[Python](https://www.python.org/)** & **[Paramiko](http://www.paramiko.org/)** – For SSH automation.
+- **[VirtualBox](https://www.virtualbox.org/)** – For the home lab environment.
