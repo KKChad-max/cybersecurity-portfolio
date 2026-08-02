@@ -16,7 +16,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 ## 📂 Portfolio Contents
 
 - **[Linux Fundamentals](/linux-fundamentals)** 
-  - OverTheWire Bandit **Levels 0–20** writeup with walkthroughs, screenshots, and troubleshooting notes.
+  - [Linux Fundamentals](/linux-fundamentals/bandit-levels-0-25.md) - OverTheWire Bandit 0-25 walkthrough
 
 - **[Python Practice](/python-practice)**
   - **`file_renamer.py`** – Batch adds prefixes to files using `os.rename()`.
