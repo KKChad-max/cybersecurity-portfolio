@@ -6,7 +6,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 ## ✅ Phase 0 Completed (July 2026)
 
-- **Linux Fundamentals:** Completed OverTheWire Bandit Levels **0–20** (Full writeup included).
+- **Linux Fundamentals:** Completed OverTheWire Bandit Levels **0–25** (Full writeup included).
 - **Python Automation:** Built 4 practical scripts (`file_renamer`, `text_parser`, `folder_scanner`, `hello`).
 - **Home Lab:** VirtualBox installed with Ubuntu LTS VM (Guest Additions configured).
 - **Documentation:** Published a detailed "Cybersecurity Field Manual" covering commands, troubleshooting, and key takeaways.
