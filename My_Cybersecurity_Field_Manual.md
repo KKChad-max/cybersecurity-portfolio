@@ -1,8 +1,8 @@
 # 🧠 My Cybersecurity Field Manual
 
 > **Author:** Chadrack Kalongo  
-> **Last Updated:** July 2026  
-> **Context:** OverTheWire Bandit 0–20 & Python Automation
+> **Last Updated:** August 2026  
+> **Context:** OverTheWire Bandit 0–25 & Python Automation
 
 ---
 
@@ -15,9 +15,12 @@
    - [Network & Ports](#network--ports)
    - [Encoding & Compression](#encoding--compression)
    - [SSH Keys & Privilege Escalation](#ssh-keys--privilege-escalation)
-4. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
-5. [Python Automation Toolkit](#-python-automation-toolkit)
-6. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
+4. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
+   - [Cron Jobs](#cron-jobs)
+   - [Restricted Shell (rbash)](#restricted-shell-rbash)
+5. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
+6. [Python Automation Toolkit](#-python-automation-toolkit)
+7. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
 ---
 
@@ -107,6 +110,62 @@
 
 ---
 
+## 🤖 Cron Jobs & Restricted Shells (rbash)
+
+### Cron Jobs
+**What it is:** Cron is a time‑based job scheduler. It runs commands or scripts automatically at specific times (e.g., every minute, every hour, at reboot).
+
+**Why it matters for security:** Attackers often look for misconfigured cron jobs to escalate privileges. If a cron job runs as `root` and executes a script in a world‑writable directory, an attacker can replace that script with malicious code.
+
+**Key Locations (on OverTheWire/Linux):**
+- `/etc/cron.d/` – System‑wide cron jobs (often show the user who runs them).
+- `/var/spool/cron/` – User‑specific cron files.
+- `crontab -l` – View your own cron jobs.
+
+**Syntax to remember:**
+
+command_to_run
+│ │ │ │ │
+│ │ │ │ └─── Day of week (0-6)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+
+Example: `* * * * * bandit22 /usr/bin/cronjob_bandit22.sh` runs every minute as user `bandit22`.
+
+**My key lessons:**
+- Always check **who** owns the cron job (the user column). If it runs as a higher‑privileged user, it's a target.
+- If a cron job executes **every script** in a directory (like `/var/spool/bandit24/foo/`), you can plant your own script to read a password file and dump it to a location you control.
+- Cron scripts often write passwords or output to `/tmp/` – always check there if a script mentions a temp file.
+
+---
+
+### Restricted Shell (rbash)
+**What it is:** `rbash` (restricted bash) is a locked‑down shell that limits what you can do. It typically restricts:
+- Changing directories (`cd`)
+- Setting environment variables (`export`)
+- Using absolute paths (`/bin/ls` instead of `ls`)
+- Running commands that contain `/` or `..`
+
+**Why you'll see it:** It is often used to trap players in a sandbox (like `bandit26`). Escaping it demonstrates a real‑world penetration testing skill.
+
+**The Classic Escape (The `vi` Trick):**
+1. Log in as the user (usually via an SSH key).
+2. If the login automatically runs a pager like `more` (e.g., `/usr/bin/showtext`), **shrink your terminal** (`stty rows 1`) to force the pager to pause.
+3. When `more` pauses, press **`v`** to open the `vi` editor.
+4. Inside `vi`, type:
+   ```vim
+   :set shell=/bin/sh
+   :shell
+
+Alternative Bypass (Direct Command):
+If you only need to read one file, you can skip the restricted shell entirely:
+
+`ssh -i key user@host -p 2220 "cat /etc/bandit_pass/nextlevel"`
+
+---
+
 ## 🧩 The Troubleshooting Hall of Fame (The Struggles)
 
 ### 1. The SSH Key `libcrypto` Error
@@ -186,4 +245,5 @@ Solution: Always jump to the next level from my local machine (outside SSH), or 
 ---
 
 > *This manual was built from real struggles, late-night debugging, and one very persistent student. Keep it close — it will save you hours in the future.* 🔥
+
 
