@@ -3,3 +3,5 @@ __pycache__/
 .vscode/
 .DS_Store
 Thumbs.db
+baseline_hashes.json
+sample_auth.log
