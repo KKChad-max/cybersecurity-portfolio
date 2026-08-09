@@ -3,7 +3,7 @@
 **Company:** Botium Toys  
 **Industry:** Toy Retail (E-commerce & Physical Storefront)  
 **Audit Date:** August 2026  
-**Auditor:** [Your Name]  
+**Auditor:** C.K. Kabinda  
 
 ---
 
