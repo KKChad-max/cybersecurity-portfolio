@@ -23,3 +23,7 @@
 - The combination of **proactive (Protect)** and **reactive (Detect, Respond)** measures creates a robust defense-in-depth strategy against DoS attacks.
 - Regular **audits and configuration checks** should be scheduled to ensure no misconfigurations or "drift" occur over time.
 - The implemented IDS/IPS and monitoring tools will not only help detect these attacks but also provide valuable forensic data for future investigations.
+
+---
+
+> *This report was completed as part of the Google Cybersecurity Certificate – Course 3*
