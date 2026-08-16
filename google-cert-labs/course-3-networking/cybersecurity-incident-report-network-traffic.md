@@ -6,25 +6,21 @@
 
 ---
 
-## Part 1: Summary of the Problem Found in the DNS and ICMP Traffic Log
+## Part 1: Summary of the Problem Found in the tcpdump Log
 
-The UDP protocol reveals that a DNS query was sent from the local computer (IP: `192.51.100.15`) to the DNS server (IP: `203.0.113.2`) requesting the IP address for the domain `yummyrecipesforme.com`.
+As part of the DNS protocol, the **UDP protocol** was used to contact the DNS server to retrieve the IP address for the domain name of `yummyrecipesforme.com`. The **ICMP protocol** was used to respond with an error message, indicating issues contacting the DNS server.
 
-This is based on the results of the network analysis, which show that the **ICMP echo reply** returned the error message:
+The UDP message going from your browser to the DNS server is shown in the first two lines of every log event. The ICMP error response from the DNS server to your browser is displayed in the third and fourth lines of every log event with the error message:
 
 > **"udp port 53 unreachable"**
 
-in response to the DNS query.
+Since port 53 is associated with DNS protocol traffic, we know this is an issue with the DNS server.
 
-The port noted in the error message is used for **DNS (Domain Name System)** services.
+Issues with performing the DNS protocol are further evident because:
+- The **plus sign (`+`)** after the query identification number `35084` indicates flags with the UDP message.
+- The **"A?"** symbol indicates flags with performing DNS protocol operations (requesting an A record, which maps a domain name to an IP address).
 
-### Most Likely Issue
-
-The DNS server is not responding to queries on port 53, either because:
-
-- The DNS service is down,
-- The server is misconfigured, or
-- A firewall is blocking UDP traffic to port 53.
+Due to the ICMP error response message about port 53, it is highly likely that the **DNS server is not responding**. This assumption is further supported by the flags associated with the outgoing UDP message and domain name retrieval.
 
 ---
 
@@ -32,32 +28,40 @@ The DNS server is not responding to queries on port 53, either because:
 
 ### Time Incident Occurred
 
-Between **13:24:32** and **13:28:50** (1:24 PM – 1:28 PM), based on the tcpdump timestamps.
+The incident occurred today at **1:24 p.m.** (13:24:32 in 24‑hour format), based on the tcpdump timestamps.
 
 ### How the IT Team Became Aware
 
-Several customers reported that they were unable to access the website `yummyrecipesforme.com` and received the error **"destination port unreachable"** when attempting to load the page. The IT team then attempted to load the webpage and received the same error.
+Customers notified the organization that they received the message **"destination port unreachable"** when they attempted to visit the website `yummyrecipesforme.com`.
+
+### Current Status
+
+The cybersecurity team providing IT services to their client organization is currently investigating the issue so customers can access the website again.
 
 ### Actions Taken to Investigate
 
-The IT team used the network protocol analyzer tool **tcpdump** to capture and analyze network traffic while attempting to load the webpage again. The tcpdump logs were then reviewed to identify the source of the error.
+In our investigation into the issue, we conducted **packet sniffing tests using `tcpdump`**. In the resulting log file, we found that **DNS port 53 was unreachable**.
 
 ### Key Findings
 
-- The local computer (`192.51.100.15`) sent a **UDP DNS query** to the DNS server (`203.0.113.2`) requesting the IP address for `yummyrecipesforme.com`.
-- The DNS server responded with an **ICMP error message** indicating **"udp port 53 unreachable"**.
+- The local computer (`192.51.100.15`) sent a UDP DNS query to the DNS server (`203.0.113.2`) requesting the IP address for `yummyrecipesforme.com`.
+- The DNS server responded with an ICMP error message indicating **"udp port 53 unreachable"**.
 - This error was repeated multiple times over a 4‑minute period (13:24:32, 13:26:32, 13:27:15, 13:28:32, 13:28:50), confirming that the issue was persistent.
-- Port 53 is the standard port used for DNS services. The error indicates that **the DNS server is not listening on port 53** or that **UDP traffic to that port is being blocked**.
+- Port 53 is the standard port used for DNS services. The error indicates that the DNS server is not listening on port 53 or that UDP traffic to that port is being blocked.
+
+### Next Steps
+
+The next step is to identify whether:
+- The **DNS server is down**, or
+- **Traffic to port 53 is blocked by the firewall**.
+
+Firewalls offer the ability to block network traffic on specific ports. Port blocking can be used to stop or prevent an attack.
 
 ### Likely Cause of the Incident
 
-The DNS server is either:
-
-- **Offline** – the server is down or unreachable,
-- **Misconfigured** – the DNS service is not running or is bound to a different port, or
-- **Blocked by a firewall rule** – UDP traffic to port 53 is being dropped or rejected.
-
-This prevents the DNS server from resolving domain names to IP addresses, which stops users from accessing the website.
+The DNS server might be down due to:
+- A successful **Denial of Service (DoS) attack** that flooded the server with traffic, crashing it or making it unable to respond to legitimate requests, or
+- A **misconfiguration** – someone from the team could have made a configuration change on the firewall that blocked port 53.
 
 ---
 
