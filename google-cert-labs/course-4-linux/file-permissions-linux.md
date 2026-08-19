@@ -19,7 +19,7 @@ To check the current permissions, I used the `ls -la` command. This lists all fi
 ```bash
 ls -la /home/researcher2/projects
 
-```Output
+**Output:**
 total 32
 drwxr-xr-x  3 researcher2 research_team 4096 Aug 19 21:15 .
 drwxr-xr-x  3 researcher2 research_team 4096 Aug 19 22:07 ..
