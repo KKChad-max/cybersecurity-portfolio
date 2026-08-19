@@ -82,8 +82,10 @@ The `drafts` directory initially had permissions `drwx--x---`, where the group h
 **Result:**
 The permissions for `drafts` changed from `drwx--x---` to `drwx------`. This removed the group's execute permission, ensuring that only the user (`researcher2`) has full read, write, and execute access. Group and others now have no access whatsoever.
 
+![Terminal output showing file permissions](images/vhoycoyfnnzbpbbfac5m7updsgtq52ngphp2omwxcehwxd7bsm6a-us-central1-c-resources-bumper-boats-00-services-qwiklabs-com-08-20-2026_12_19_AM.png)
+
 ---
 
-##Summary
+## Summary
 
 By systematically auditing the file and directory permissions using `ls -la` and applying corrective changes with `chmod`, I successfully tightened security for the research team. I removed write access for "others" on `project_k.txt`, restricted write access while preserving read access for the user and group on the hidden file `.project_x.txt`, and locked down the `drafts` directory so that only `researcher2` can access it. These measures ensure that sensitive project files are only accessible to the appropriate personnel, in full compliance with the organization's security policy.
