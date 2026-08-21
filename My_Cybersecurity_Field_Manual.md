@@ -18,9 +18,10 @@
 4. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
    - [Cron Jobs](#cron-jobs)
    - [Restricted Shell (rbash)](#restricted-shell-rbash)
-5. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
-6. [Python Automation Toolkit](#-python-automation-toolkit)
-7. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
+5. 5. [SQL (Structured Query Language)](#-sql-structured-query-language)
+6. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
+7. [Python Automation Toolkit](#-python-automation-toolkit)
+8. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
 ---
 
@@ -205,7 +206,103 @@ client.connect(hostname="bandit.labs.overthewire.org", port=2220, username="band
 - **Solution:** Bypass the login shell by running a command remotely:  
   `ssh bandit18@host -p 2220 "cat readme"`.
 
+===
+
+
+## 🗄️ SQL (Structured Query Language)
+
+### What is SQL?
+SQL is used to interact with relational databases. For security professionals, it is essential for:
+- Investigating login attempts and access logs
+- Auditing user permissions and machine assignments
+- Identifying suspicious activity (e.g., after‑hours logins, unusual locations)
+- Generating reports for compliance and incident response
+
 ---
+
+### Core SQL Components
+
+| Component | Description |
+| :--- | :--- |
+| **SELECT** | Specifies which columns to retrieve |
+| **FROM** | Specifies the table to query |
+| **WHERE** | Filters rows based on conditions |
+| **ORDER BY** | Sorts results (ASC or DESC) |
+| **JOIN** | Combines two tables on a common column |
+
+---
+
+### Common SQL Operators (Filters)
+
+| Operator | Purpose | Security Example |
+| :--- | :--- | :--- |
+| `=` | Equals | `WHERE department = 'Marketing'` |
+| `>` / `<` | Greater than / Less than | `WHERE login_time > '18:00'` |
+| `>=` / `<=` | Greater than or equal / Less than or equal | `WHERE login_date >= '2023-01-15'` |
+| `BETWEEN` | Range of values | `WHERE login_date BETWEEN '2023-02-01' AND '2023-02-07'` |
+| `AND` | Both conditions must be true | `WHERE login_time > '18:00' AND success = 0` |
+| `OR` | At least one condition is true | `WHERE department = 'Sales' OR department = 'Finance'` |
+| `NOT` | Excludes a condition | `WHERE NOT department = 'Information Technology'` |
+| `LIKE` | Pattern matching (use `%` wildcard) | `WHERE country NOT LIKE 'MEX%'` |
+| `IN` | Matches any value in a list | `WHERE department IN ('Sales', 'Finance', 'Marketing')` |
+
+---
+
+### SQL Joins
+
+| Join Type | What it does |
+| :--- | :--- |
+| **INNER JOIN** | Returns only rows that have a match in both tables |
+| **LEFT JOIN** | Returns all rows from the left table, and matches from the right table |
+| **RIGHT JOIN** | Returns all rows from the right table, and matches from the left table |
+
+**Example – INNER JOIN (employees ↔ machines):**
+```sql
+SELECT *
+FROM machines
+INNER JOIN employees ON machines.device_id = employees.device_id;
+```
+===
+
+### Aggregate Functions
+
+| Function | Purpose |
+| :--- | :--- |
+| `COUNT(*)` | Returns the total number of rows |
+| `AVG(column)` | Returns the average of a numeric column |
+| `SUM(column)` | Returns the sum of a numeric column |
+
+**Example – Counting all employees:**
+
+```sql
+SELECT COUNT(firstname) FROM employees;
+```
+
+Example – Counting employees from a specific country:
+
+```sql
+SELECT COUNT(firstname) FROM employees WHERE country = 'USA';
+```
+
+---
+
+### Pro Tips
+
+LIKE with `%`: Use `%` as a wildcard.
+`LIKE 'East-%'` → matches "East-170", "East-320", etc.
+`LIKE 'MEX%'` → matches "MEX" and "MEXICO".
+
+Quotes: String values must be in single quotes (e.g., `'Marketing'`). Numbers and Booleans (`TRUE`/`FALSE`) do not need quotes.
+
+Semicolon: Every SQL statement must end with a `; or the shell will wait for more input.
+
+Table.column notation: When joining tables, use `table.column` to avoid ambiguity (e.g., `machines.device_id` vs `employees.device_id`).
+``
+
+
+===
+
+
 
 ## 🐍 Python Automation Toolkit
 
