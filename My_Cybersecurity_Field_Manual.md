@@ -18,7 +18,7 @@
 4. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
    - [Cron Jobs](#cron-jobs)
    - [Restricted Shell (rbash)](#restricted-shell-rbash)
-5. 5. [SQL (Structured Query Language)](#-sql-structured-query-language)
+5. [SQL (Structured Query Language)](#-sql-structured-query-language)
 6. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
 7. [Python Automation Toolkit](#-python-automation-toolkit)
 8. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
@@ -255,6 +255,7 @@ SQL is used to interact with relational databases. For security professionals, i
 | **INNER JOIN** | Returns only rows that have a match in both tables |
 | **LEFT JOIN** | Returns all rows from the left table, and matches from the right table |
 | **RIGHT JOIN** | Returns all rows from the right table, and matches from the left table |
+| **FULL OUTER JOIN** | Returns all records from both tables. It matches rows that share a common value, and for rows without a match |
 
 **Example – INNER JOIN (employees ↔ machines):**
 ```sql
@@ -262,7 +263,7 @@ SELECT *
 FROM machines
 INNER JOIN employees ON machines.device_id = employees.device_id;
 ```
-===
+---
 
 ### Aggregate Functions
 
@@ -300,7 +301,7 @@ Table.column notation: When joining tables, use `table.column` to avoid ambiguit
 ``
 
 
-===
+---
 
 
 
