@@ -244,6 +244,7 @@ chmod u=r,g=r .project_x.txt
 
 # Remove execute permission from the group on a directory
 chmod g-x drafts
+```
 
 ---
 
