@@ -2,26 +2,28 @@
 
 > **Author:** Chadrack Kalongo  
 > **Last Updated:** August 2026  
-> **Context:** OverTheWire Bandit 0–25 & Python Automation
+> **Context:** OverTheWire Bandit 0–25, Google Cybersecurity Certificate (Linux, SQL, Python) & Security Automation
 
 ---
 
 ## 📌 Table of Contents
 1. [Git & GitHub Foundations](#-git--github-foundations)
 2. [Linux Terminal & SSH Basics](#-linux-terminal--ssh-basics)
-3. [Bandit Commands Reference (0–20)](#-bandit-commands-reference-020)
+3. [Linux User & System Administration](#-linux-user--system-administration-google-cert)
+4. [Getting Help in Linux](#-getting-help-in-linux-google-cert)
+5. [Bandit Commands Reference (0–20)](#-bandit-commands-reference-020)
    - [Finding & Reading Files](#finding--reading-files)
    - [Searching & Parsing Text](#searching--parsing-text)
    - [Network & Ports](#network--ports)
    - [Encoding & Compression](#encoding--compression)
    - [SSH Keys & Privilege Escalation](#ssh-keys--privilege-escalation)
-4. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
+6. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
    - [Cron Jobs](#cron-jobs)
    - [Restricted Shell (rbash)](#restricted-shell-rbash)
-5. [SQL (Structured Query Language)](#-sql-structured-query-language)
-6. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
-7. [Python Automation Toolkit](#-python-automation-toolkit)
-8. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
+7. [SQL (Structured Query Language)](#-sql-structured-query-language)
+8. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
+9. [Python Automation Toolkit](#-python-automation-toolkit)
+10. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
 ---
 
@@ -206,7 +208,65 @@ client.connect(hostname="bandit.labs.overthewire.org", port=2220, username="band
 - **Solution:** Bypass the login shell by running a command remotely:  
   `ssh bandit18@host -p 2220 "cat readme"`.
 
-===
+---
+
+## 🛠️ Linux User & System Administration (Google Cert)
+
+### User & Group Management
+
+| Command | What it does | Example |
+| :--- | :--- | :--- |
+| `sudo useradd <username>` | Creates a new user account | `sudo useradd researcher9` |
+| `sudo usermod -g <group> <user>` | Sets the **primary group** for a user | `sudo usermod -g research_team researcher9` |
+| `sudo usermod -a -G <group> <user>` | Adds a user to a **secondary (supplementary) group** | `sudo usermod -a -G sales_team researcher9` |
+| `sudo userdel <username>` | Deletes a user account | `sudo userdel researcher9` |
+| `sudo groupdel <groupname>` | Deletes a group | `sudo groupdel researcher9` |
+| `sudo chown <user> <file>` | Changes the **owner** of a file or directory | `sudo chown researcher9 /home/researcher2/projects/project_r.txt` |
+| `sudo chown :<group> <file>` | Changes the **group** ownership of a file | `sudo chown :research_team project_r.txt` |
+
+### File & Directory Permissions (chmod)
+
+| Symbolic | Octal | What it does |
+| :--- | :--- | :--- |
+| `u=r` | `400` | User has read‑only access |
+| `g=r` | `040` | Group has read‑only access |
+| `o-w` | `222` | Remove write permission for others |
+| `g-x` | `111` | Remove execute permission for group |
+| `u=rwx,g=rx,o=` | `750` | User: full, Group: read+execute, Others: none |
+
+**My lab examples:**
+```bash
+# Remove write access for "others" on project_k.txt
+chmod o-w project_k.txt
+
+# Set user and group to read‑only on a hidden file
+chmod u=r,g=r .project_x.txt
+
+# Remove execute permission from the group on a directory
+chmod g-x drafts
+
+---
+
+## 📖 Getting Help in Linux (Google Cert)
+
+| Command | What it does | Example |
+| :--- | :--- | :--- |
+| `whatis <command>` | Shows a **one‑line description** of a command | `whatis cat` → `"concatenate files and print on standard output"` |
+| `man <command>` | Opens the **full manual page** for a command | `man useradd` (press `q` to exit, `space` to page down) |
+| `grep <keyword> <file>` | Searches inside a file (or manual page) for a keyword | `man cat \| grep number` (finds options for numbering lines) |
+| `apropos <keyword>` | Searches **all** manual pages for a keyword – great when you forget the exact command name | `apropos "create new group"` → returns `groupadd` |
+
+> 💡 **Pro tip:** If you forget the exact command, use `apropos` or `man -k <keyword>`.
+
+**Example:**
+
+```bash
+man -k "create new group"
+# Outputs: groupadd (8) - create a new group
+```
+
+---
+
 
 
 ## 🗄️ SQL (Structured Query Language)
