@@ -182,14 +182,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 private_key = paramiko.RSAKey.from_private_key_file(key_path)
 client.connect(hostname="bandit.labs.overthewire.org", port=2220, username="banditX", pkey=private_key)
 # Run your command...
-
-2. The localhost Connection Block
-Situation: Tried ssh bandit14@localhost -p 2220 from inside a server. Got "Connecting from localhost is blocked".
-
-Why: OverTheWire blocks password logins from localhost to force SSH key usage.
-
-Solution: Always jump to the next level from my local machine (outside SSH), or use the key method without interactive passwords.
-
+```
 
 ### 2. The `localhost` Connection Block
 - **Situation:** Tried `ssh bandit14@localhost -p 2220` from inside a server. Got "Connecting from localhost is blocked".
