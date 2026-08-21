@@ -63,7 +63,7 @@ This query returns all login attempts from countries other than Mexico, helping 
 The team needed to update machines for employees in the Marketing department who work in the East Building. I filtered the `employees` table for employees in the `Marketing` department whose office location starts with `East-` using the `LIKE` operator with `%`.
 
 **SQL query:**
-``sql
+```sql
 SELECT *
 FROM employees
 WHERE department = 'Marketing' AND office LIKE 'East-%';
@@ -78,7 +78,7 @@ This query returns all Marketing employees in East Building offices. It helps th
 A different security update was needed for employees in the Sales and Finance departments. I used the `OR` operator to retrieve employees from either department.
 
 **SQL query:**
-``sql
+```sql
 SELECT *
 FROM employees
 WHERE department = 'Sales' OR department = 'Finance';
@@ -93,7 +93,7 @@ This query returns all employees in the Sales and Finance departments, allowing 
 The final update needed to be applied to all employees except those in the Information Technology department, since IT had already received the update. I used the `NOT` operator with the `=` operator to exclude the IT department.
 
 **SQL query:**
-``sql
+```sql
 SELECT *
 FROM employees
 WHERE NOT department = 'Information Technology';
