@@ -26,6 +26,7 @@ WHERE login_time > '18:00' AND success = 0;
 
 **Output:**
 This query returns all login attempts made after 6:00 PM that resulted in failure. It helps the security team investigate unauthorized access attempts during off-hours.
+![Terminal output showing file permissions](images/Task 1.png)
 
 ---
 
@@ -42,6 +43,7 @@ WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';
 
 **Output:**
 This query returns all login attempts on the two specified dates. It provides a focused dataset for investigating the suspicious event.
+![Terminal output showing file permissions](images/Task 2.png)
 
 ---
 
@@ -56,6 +58,7 @@ WHERE country NOT LIKE 'MEX%';
 ```
 **Output:**
 This query returns all login attempts from countries other than Mexico, helping the team focus on potentially malicious traffic from other regions.
+![Terminal output showing file permissions](images/Task 3.png)
 
 ---
 
@@ -71,6 +74,7 @@ WHERE department = 'Marketing' AND office LIKE 'East-%';
 
 **Output:**
 This query returns all Marketing employees in East Building offices. It helps the team scope the security update to the correct group of machines.
+![Terminal output showing file permissions](images/Task 4.png)
 
 ---
 
@@ -86,6 +90,7 @@ WHERE department = 'Sales' OR department = 'Finance';
 
 **Output:**
 This query returns all employees in the Sales and Finance departments, allowing the team to target the correct machines for the update.
+![Terminal output showing file permissions](images/Task 5.png)
 
 ---
 
@@ -101,6 +106,7 @@ WHERE NOT department = 'Information Technology';
 
 **Output:**
 This query returns all employees outside of the IT department. It ensures that the security update is applied to all remaining departments.
+![Terminal output showing file permissions](images/Task 6.png)
 
 ---
 
