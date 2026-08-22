@@ -9,9 +9,10 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 | Badge | Status |
 | :--- | :--- |
 | **Google Cybersecurity Certificate** | Courses 1–4 ✅ Completed (4 of 8) |
-| **Google AI Professional Certificate** | 3 of 8 Courses ✅ Completed |
+| **Google AI Professional Certificate** | 4 of 8 Courses ✅ Completed |
 | **OPSWAT Introduction to Critical Infrastructure Protection (ICIP)** | ✅ Earned (Expires Aug 2027) |
 | **OverTheWire Bandit 0–25** | ✅ Completed & Documented |
+| **CompTIA Security+ (SY0-701)** | 🎯 Targeting September/October 2026 |
 
 ---
 
@@ -60,7 +61,12 @@ I maintain a personal **[My_Cybersecurity_Field_Manual.md](/My_Cybersecurity_Fie
 ---
 
 ## 🎯 Current Goal
-Building a strong foundation in network security, Linux, Python, and critical infrastructure protection to pursue a role as a **Security Analyst**. Next up: TryHackMe rooms, advanced defensive security tools, and completing the Google Cybersecurity Certificate.
+Building a strong foundation in **network security, Linux, SQL, Python, and critical infrastructure protection** to pursue a role as a **Security Analyst**. 
+
+**Next up:**
+- TryHackMe rooms and advanced defensive security tools.
+- Completing the Google Cybersecurity Certificate (Courses 5–8).
+- Preparing for the **CompTIA Security+** certification exam (targeting September/October 2026).
 
 ---
 
