@@ -1,4 +1,4 @@
-# Ransomware Simulation: Caesar Cipher Recovery
+# Decryption Lab: Caesar Cipher & OpenSSL Recovery
 
 **Date:** August 24, 2026  
 **Author:** Chadrack Kalongo Kabinda  
@@ -8,7 +8,7 @@
 
 ## Scenario
 
-A simulated ransomware attack encrypted data files on a Linux system. A `README.txt` file instructed me to find a hidden file in the `caesar` subdirectory to recover the decryption key. My task was to locate the hidden file, decode the Caesar cipher, and use the recovered key to decrypt the encrypted data.
+In this lab activity, all files in my home directory were encrypted. I needed to use Linux commands to break a Caesar cipher and decrypt the files to recover the hidden message. The goal was to practice decryption techniques and understand how basic cryptography can be used to protect (or restrict access to) data.
 
 ---
 
@@ -127,14 +127,14 @@ Success! The file was successfully decrypted and the data was recovered.
 
 ## Reflection
 
-**This lab demonstrated a practical ransomware recovery scenario using basic cryptography. Key takeaways:**
+**This lab demonstrated how basic cryptographic techniques (Caesar cipher) and symmetric encryption (AES-256-CBC) can be used to secure data. Key takeaways:**
 
-Cryptography fundamentals: Understanding how Caesar cipher shifts work is important for decoding simple encrypted messages.
+- **Caesar cipher:** Understanding shift values is essential for decoding simple encrypted messages.
 
-Ransomware response: Following instructions and using the correct decryption key can recover encrypted data.
+- **OpenSSL:** A powerful command-line tool for encryption and decryption.
 
-Linux command-line proficiency: Used `ls -la`, `cat`, `tr`, and openssl to complete the task.
+- **Linux command-line proficiency:** Used 'ls -la', 'cat', 'tr', and 'openssl' to complete the task.
 
-Attention to detail: The filename `.leftShift3` provided the crucial clue for the correct shift direction.
+- **Following instructions:** The README provided a clear path to recovery, reinforcing the importance of documentation.
 
-This lab reinforced the importance of having backups and understanding how encryption works – both as a defense mechanism and as a tool used by attackers.
+This lab reinforced the value of encryption as a security control – both for protecting data and, in this simulated scenario, for understanding how to recover it.
