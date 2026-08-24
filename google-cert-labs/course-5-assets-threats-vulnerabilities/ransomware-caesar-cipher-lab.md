@@ -74,7 +74,7 @@ analyst@e40e264877f8:~$ cat caesar/.leftShift3 | tr "d-za-cD-ZA-C" "a-zA-Z"
 
 Decoded output:
 
-``text
+```text
 In order to recover your files you will need to enter the following command:
 
 openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out Q1.recovered -k ettbutre
