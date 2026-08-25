@@ -1,6 +1,6 @@
 ## Threat Modeling Reflection
 
-Identifying specific threats is the foundation of effective threat modeling. Without understanding the techniques attackers use—such as phishing, ransomware, XSS, SQL injection, or parameter tampering—security teams are building defenses in the dark.
+Identifying specific threats is the foundation of effective threat modeling. Without understanding the techniques attackers use, such as phishing, ransomware, XSS, SQL injection, or parameter tampering—security teams are building defenses in the dark.
 
 **Why this matters:**
 
@@ -10,7 +10,7 @@ Identifying specific threats is the foundation of effective threat modeling. Wit
 
 3. **Defense in depth:** By understanding multiple attack vectors, we can layer controls (technical, administrative, physical) to protect against a wide range of threats.
 
-4. **Business alignment:** Threat modeling connects security efforts to business objectives—protecting customer data, ensuring availability, and maintaining trust.
+4. **Business alignment:** Threat modeling connects security efforts to business objectives; protecting customer data, ensuring availability, and maintaining trust.
 
 5. **Continuous improvement:** Threats evolve. Regular threat modeling ensures defenses stay relevant as new attack methods emerge.
 
