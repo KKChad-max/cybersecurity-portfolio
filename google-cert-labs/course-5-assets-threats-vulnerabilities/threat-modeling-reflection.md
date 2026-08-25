@@ -10,7 +10,7 @@ Identifying specific threats is the foundation of effective threat modeling. Wit
 
 3. **Defense in depth:** By understanding multiple attack vectors, we can layer controls (technical, administrative, physical) to protect against a wide range of threats.
 
-4. **Business alignment:** Threat modeling connects security efforts to business objectives—protecting customer data, ensuring availability, and maintaining trust.
+4. **Business alignment:** Threat modeling connects security efforts to business objectives; protecting customer data, ensuring availability, and maintaining trust.
 
 5. **Continuous improvement:** Threats evolve. Regular threat modeling ensures defenses stay relevant as new attack methods emerge.
 
