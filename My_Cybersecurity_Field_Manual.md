@@ -583,7 +583,8 @@ Risk = Likelihood × Impact
 - One of the earliest encryption techniques.
 - Shifts letters by a fixed number (e.g., shift of 3: A→D, B→E).
 - Decoded using `tr` in Linux:
-  ```bash
+
+ ```bash
   cat encrypted.txt | tr 'A-Za-z' 'D-ZA-Cd-za-c'
 ```
 
