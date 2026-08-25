@@ -1,6 +1,6 @@
 ## Threat Modeling Reflection
 
-Identifying specific threats is the foundation of effective threat modeling. Without understanding the techniques attackers use—such as phishing, ransomware, XSS, SQL injection, or parameter tampering—security teams are building defenses in the dark.
+Identifying specific threats is the foundation of effective threat modeling. Without understanding the techniques attackers use, such as phishing, ransomware, XSS, SQL injection, or parameter tampering—security teams are building defenses in the dark.
 
 **Why this matters:**
 
