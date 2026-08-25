@@ -23,7 +23,15 @@
 7. [SQL (Structured Query Language)](#-sql-structured-query-language)
 8. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
 9. [Python Automation Toolkit](#-python-automation-toolkit)
-10. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
+10. [Assets, Threats, and Vulnerabilities](#-assets-threats-and-vulnerabilities)
+   - [Asset Management & Classification](#asset-management--classification)
+   - [Risk Assessment](#risk-assessment)
+   - [Vulnerability Assessment](#vulnerability-assessment)
+   - [Threat Modeling (PASTA)](#threat-modeling-pasta)
+   - [Web-Based Exploits](#web-based-exploits)
+   - [Social Engineering & Malware](#social-engineering--malware)
+   - [Cryptography & Hashing](#cryptography--hashing)
+11. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
 ---
 
@@ -376,6 +384,224 @@ Table.column notation: When joining tables, use `table.column` to avoid ambiguit
 | `fetch_banditX_password.py` | Use `paramiko` to authenticate with an SSH key when the local CLI fails. |
 
 ---
+
+## 🧠 Assets, Threats, and Vulnerabilities
+
+---
+
+### Asset Management & Classification
+
+#### What is an Asset?
+An asset is anything of value to an organization, including:
+- **Physical assets:** Hardware, servers, laptops, routers, storage devices.
+- **Digital assets:** Data, databases, intellectual property, customer information.
+- **Human assets:** Employees, contractors, partners.
+- **Intangible assets:** Brand reputation, customer trust.
+
+#### Asset Classification (Sensitivity Levels)
+
+| Level | Definition | Examples |
+| :--- | :--- | :--- |
+| **Public** | No impact if disclosed. | Marketing materials, public website content. |
+| **Internal-Only** | Minor impact if disclosed. | Internal policies, employee directories. |
+| **Confidential** | Moderate to severe impact if breached. | Customer PII, financial records, business plans. |
+| **Restricted** | Severe to critical impact if breached. | Encryption keys, root credentials, classified data. |
+
+#### Asset Inventory
+- A catalog of all assets that need to be protected.
+- Includes: Asset name, owner, location, network access, sensitivity level.
+- **Why it matters:** You cannot protect what you don't know exists.
+
+**My lab example:**
+I created a home office asset inventory with devices like Network Router (Restricted), Work Laptop (Confidential), and Smart TV (Public/Internal-Only). This helped me prioritize security controls for the most sensitive assets.
+
+---
+
+### Risk Assessment
+
+#### What is Risk?
+Risk = Likelihood × Impact
+
+| Term | Definition |
+| :--- | :--- |
+| **Threat** | A potential danger (e.g., a hacker, a natural disaster). |
+| **Vulnerability** | A weakness that can be exploited (e.g., a missing patch). |
+| **Risk** | The likelihood of a threat exploiting a vulnerability. |
+| **Control** | A safeguard to reduce risk (e.g., firewall, MFA). |
+
+#### NIST SP 800-30 Rev. 1 Risk Assessment Process
+
+| Step | Description |
+| :--- | :--- |
+| 1. Identify Threat Sources | Who or what could cause harm? (e.g., hackers, employees, natural disasters). |
+| 2. Identify Threat Events | What could happen? (e.g., data exfiltration, DoS attack). |
+| 3. Determine Likelihood | How likely is the event? (Score 1-3: Low, Moderate, High). |
+| 4. Determine Severity | What is the impact? (Score 1-3: Low, Moderate, High). |
+| 5. Calculate Risk | Likelihood × Severity = Risk Score (1-9). |
+| 6. Prioritize | Focus on high-risk items first. |
+
+#### Risk Register Example
+
+| Asset | Risk | Likelihood | Severity | Priority |
+| :--- | :--- | :--- | :--- | :--- |
+| Funds | Business Email Compromise | 3 | 3 | **9** (Critical) |
+| Funds | Financial Records Leak | 2 | 3 | **6** (High) |
+| Funds | Theft | 1 | 3 | **3** (Medium) |
+
+**My lab example:** I completed a risk register for a commercial bank, scoring Business Email Compromise as a critical risk (9) because of its high likelihood and severe impact.
+
+---
+
+### Vulnerability Assessment
+
+#### What is a Vulnerability Assessment?
+- A systematic review of an organization's security systems to identify weaknesses.
+- Uses frameworks like **NIST SP 800-30 Rev. 1** to guide risk analysis.
+- Outcome: A report with identified risks, likelihood/severity scores, and remediation recommendations.
+
+#### Threat Sources (NIST SP 800-30)
+
+| Type | Examples |
+| :--- | :--- |
+| **Human** | Employees, hackers, competitors, nation-states. |
+| **Technological** | Hardware failures, software bugs, network issues. |
+| **Environmental** | Natural disasters, power outages, temperature failures. |
+
+#### Threat Events (Examples)
+
+| Threat Event | Description |
+| :--- | :--- |
+| **Reconnaissance** | Attackers scan for vulnerabilities. |
+| **Data Exfiltration** | Sensitive data is stolen. |
+| **SQL Injection** | Malicious SQL queries are injected into input fields. |
+| **Denial of Service (DoS)** | Systems are overwhelmed with requests. |
+| **Man-in-the-Middle (MITM)** | Communication is intercepted. |
+| **Phishing** | Users are tricked into revealing credentials. |
+
+#### Remediation Strategy
+
+| Control | Purpose |
+| :--- | :--- |
+| **IP Allow-listing** | Restrict access to trusted sources. |
+| **Multi-Factor Authentication (MFA)** | Add an extra layer of authentication. |
+| **Encryption (TLS & AES)** | Protect data in transit and at rest. |
+| **Role-Based Access Controls (RBAC)** | Enforce least privilege. |
+| **SIEM Monitoring** | Detect and alert on suspicious activity. |
+| **Regular Audits & Penetration Testing** | Identify vulnerabilities proactively. |
+
+**My lab example:** I conducted a vulnerability assessment for an e‑commerce company with a publicly accessible database server. I identified threats (reconnaissance, data exfiltration), scored them (Likelihood 2-3, Severity 2-3), and proposed a remediation strategy including IP allow-listing, MFA, and SIEM monitoring.
+
+---
+
+### Threat Modeling (PASTA)
+
+#### What is Threat Modeling?
+- A structured approach to identifying security requirements and potential risks in a system.
+- Helps integrate security into the software development lifecycle.
+
+#### PASTA Framework (7 Stages)
+
+| Stage | Objective |
+| :--- | :--- |
+| **I. Define Business Objectives** | Understand why the app is built and what it needs to do. |
+| **II. Define Technical Scope** | Identify the technology stack (API, PKI, SQL, etc.). |
+| **III. Decompose Application** | Create a Data Flow Diagram to show how data moves. |
+| **IV. Threat Analysis** | Identify internal and external threats. |
+| **V. Vulnerability Analysis** | List vulnerabilities that could be exploited. |
+| **VI. Attack Modeling** | Build an Attack Tree to visualize attack paths. |
+| **VII. Risk Analysis & Impact** | Recommend security controls to reduce risk. |
+
+#### Data Flow Diagram (DFD)
+- Visual representation of how data flows through an application.
+- Shows: Users, processes, databases, external services, and communication paths.
+
+#### Attack Tree
+- Visual representation of possible attack paths.
+- Goal at the root, branches representing different attack vectors.
+- Helps stakeholders understand how an attacker could compromise the system.
+
+**My lab example:** I performed a PASTA threat model for a sneaker company app. I identified business objectives (connect buyers/sellers, secure payments), technical scope (API, PKI, SHA-256, SQL), threats (internal/external), vulnerabilities (SQL injection, weak session management), and recommended controls (input validation, MFA, encryption, rate limiting).
+
+---
+
+### Web-Based Exploits
+
+| Exploit | Description | Example |
+| :--- | :--- | :--- |
+| **SQL Injection** | Malicious SQL queries injected into input fields. | `' OR '1'='1` bypasses authentication. |
+| **Cross-Site Scripting (XSS)** | Malicious scripts injected into web pages. | Stealing session cookies via `<script>` tags. |
+| **Parameter Tampering / IDOR** | Modifying URL or form parameters to access unauthorized data. | Changing `user_id=123` to `user_id=124`. |
+| **Cross-Site Request Forgery (CSRF)** | Tricking a user into performing unwanted actions. | Making a user change their email address. |
+| **Session Hijacking** | Stealing a user's session token. | Using stolen cookies to impersonate a user. |
+
+---
+
+### Social Engineering & Malware
+
+#### Social Engineering Techniques
+
+| Technique | Description |
+| :--- | :--- |
+| **Phishing** | Mass emails impersonating a trusted source. |
+| **Spear Phishing** | Targeted phishing for a specific individual. |
+| **Whaling** | Phishing targeting high‑profile executives. |
+| **Vishing** | Voice phishing (over the phone). |
+| **Smishing** | SMS phishing (via text messages). |
+| **Baiting** | Leaving malware‑infected physical devices (e.g., USB drives). |
+| **Tailgating** | Following an authorized person into a secure area. |
+| **Pretexting** | Creating a false scenario to obtain information. |
+
+#### Common Malware Types
+
+| Type | Description |
+| :--- | :--- |
+| **Worm** | Self‑replicates and spreads across networks. |
+| **Virus** | Requires a host file and user action to spread. |
+| **Trojan** | Disguised as legitimate software. |
+| **Ransomware** | Encrypts files and demands payment. |
+| **Spyware** | Secretly monitors user activity. |
+| **Adware** | Displays unwanted advertisements. |
+| **Rootkit** | Hides its presence and grants privileged access. |
+| **Keylogger** | Records keystrokes to steal credentials. |
+
+**My lab example:** I analyzed a phishing email targeting an executive and identified red flags (sender domain, misspelling, urgency). I also identified malware types like worms and ransomware in the dialogue activity.
+
+---
+
+### Cryptography & Hashing
+
+#### Encryption vs. Hashing
+
+| Feature | Encryption | Hashing |
+| :--- | :--- | :--- |
+| **Reversible?** | Yes (with the correct key) | No (one‑way function) |
+| **Purpose** | Protect confidentiality | Verify integrity |
+| **Examples** | AES, RSA | SHA-256, MD5 |
+| **Output** | Ciphertext | Fixed‑length hash (digest) |
+
+#### Caesar Cipher
+- One of the earliest encryption techniques.
+- Shifts letters by a fixed number (e.g., shift of 3: A→D, B→E).
+- Decoded using `tr` in Linux:
+  ```bash
+  cat encrypted.txt | tr 'A-Za-z' 'D-ZA-Cd-za-c'
+```
+
+**SHA-256 Hashing**
+- Produces a 256‑bit hash value.
+
+- Used to verify file integrity:
+
+```bash
+sha256sum file.txt
+```
+
+- Even a tiny change in a file produces a completely different hash.
+
+My lab example: I decrypted a Caesar cipher in Linux using tr and used `sha256sum` to verify that two files were not identical (they had different hashes).
+
+---
+
 
 ## 💡 The "Pro" Takeaways (What Actually Changed in My Brain)
 
