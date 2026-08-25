@@ -1,0 +1,40 @@
+# PASTA Threat Model Worksheet: Sneaker Company App
+
+**Date:** August 25, 2026  
+**Author:** Chadrack Kalongo Kabinda  
+**Course:** Google Cybersecurity Certificate – Course 5  
+
+---
+
+## Scenario
+
+A sneaker company is preparing to launch a mobile app that allows customers to buy and sell shoes. As part of the security team, I performed a threat model using the **PASTA** (Process of Attack Simulation and Threat Analysis) framework to identify security requirements and potential risks before the app launch.
+
+---
+
+## PASTA Worksheet
+
+| Stage | Sneaker Company App |
+| :--- | :--- |
+| **I. Define Business and Security Objectives** | 1. Seamlessly connect buyers and sellers through a secure platform. <br><br> 2. Provide secure payment processing with multiple payment options to ensure smooth transactions and avoid legal issues. <br><br> 3. Enable direct messaging between buyers and sellers, and allow buyers to rate sellers to encourage good service. |
+| **II. Define the Technical Scope** | The application will use the following technologies: <br><br> - **Application Programming Interface (API):** To enable communication between the mobile app, backend servers, and third‑party payment processors. <br><br> - **Public Key Infrastructure (PKI):** To issue and manage digital certificates for secure communications (HTTPS/TLS). <br><br> - **SHA-256:** To hash passwords and verify data integrity. <br><br> - **SQL:** To store and query user data, inventory, transaction history, and ratings in a relational database. <br><br> **Justification:** I prioritized **API security** because the app relies heavily on APIs for all core functions – user authentication, product search, messaging, and payment processing. A compromised API could expose sensitive user data, payment information, and business logic. Protecting the API with strong authentication, rate limiting, and input validation is essential to the app's security. |
+| **III. Decompose Application** | **Data Flow Diagram (Textual Representation):** <br><br> ``` <br> +----------+     +---------------------+     +------------------+ <br> |  Client  | --> |  API Gateway        | --> |  Backend Services| <br> |  (Mobile |     |  (Auth, Rate Limit) |     |  (Search, Auth,  | <br> |   App)   |     +---------------------+     |   Messaging,     | <br> +----------+           |                      |   Payments)      | <br>         |              |                      +--------+---------+ <br>         |              |                               | <br>         |              v                               v <br>         |      +-----------------+           +-----------------+ <br>         |      |   Load Balancer |           |   Database      | <br>         |      +-----------------+           |   (SQL, SHA-256)| <br>         |                                     +-----------------+ <br>         +-----------> (HTTPS/TLS) <br> ``` <br><br> **Explanation:** <br> - The **Client** (mobile app) sends requests to an **API Gateway** that handles authentication and rate limiting. <br> - Requests are then routed through a **Load Balancer** to **Backend Services** (search, messaging, payments). <br> - Backend services interact with a **Database** (SQL) to store and retrieve user data, inventory, and transactions. <br> - All communication is secured with **HTTPS/TLS**. |
+| **IV. Threat Analysis** | **Internal Threats:** <br> - Disgruntled employees with access to the database could steal or modify user data (e.g., PII, payment information). <br> - Developers with excessive privileges could introduce backdoors or insecure code. <br><br> **External Threats:** <br> - Attackers could exploit the API to perform **brute‑force attacks** on user accounts. <br> - Attackers could intercept unencrypted data in transit (e.g., Man‑in‑the‑Middle attacks). <br> - Attackers could use **social engineering** (phishing) to trick users into revealing their login credentials. |
+| **V. Vulnerability Analysis** | 1. **SQL Injection:** If user input is not properly sanitized, an attacker could inject malicious SQL queries to extract, modify, or delete data from the database. <br><br> 2. **Weak Session Management:** If session tokens are not generated securely or are not invalidated after logout, an attacker could hijack user sessions and impersonate legitimate users. <br><br> 3. **Insecure API Endpoints:** If API endpoints lack proper authentication and rate limiting, attackers could perform brute‑force attacks or overload the system with excessive requests (DoS). |
+| **VI. Attack Modeling** | **Attack Tree (Textual Representation):** <br><br> ``` <br> Goal: Compromise User Data <br> ├── 1. Exploit Application Code <br> │   ├── 1.1 SQL Injection <br> │   │   └── Lack of prepared statements / input sanitization <br> │   ├── 1.2 Insecure API Endpoints <br> │   │   └── Missing authentication / rate limiting <br> │   └── 1.3 Session Hijacking <br> │       └── Weak login credentials / insecure session tokens <br> ├── 2. Exploit Infrastructure <br> │   ├── 2.1 Man-in-the-Middle (MITM) <br> │   │   └── Unencrypted data in transit (HTTP instead of HTTPS) <br> │   └── 2.2 Denial of Service (DoS) <br> │       └── No rate limiting on API requests <br> └── 3. Exploit Human Factors <br>     ├── 3.1 Phishing / Social Engineering <br>     │   └── User deceived into revealing credentials <br>     └── 3.2 Insider Threat <br>         └── Disgruntled employee with excessive database privileges <br> ``` |
+| **VII. Risk Analysis and Impact** | **Security Controls to Reduce Risk:** <br><br> 1. **Input Validation & Parameterized Queries:** Prevent SQL injection by sanitizing all user input and using prepared statements. <br><br> 2. **Multi-Factor Authentication (MFA):** Add an extra layer of security for user accounts, especially for sellers and administrators. <br><br> 3. **Encryption (TLS & AES):** Encrypt data in transit (TLS/HTTPS) and at rest (AES) to protect sensitive information from interception or theft. <br><br> 4. **Rate Limiting & API Throttling:** Prevent brute‑force attacks and DoS by limiting the number of requests a user can make in a given time period. <br><br> 5. **Regular Security Audits & Penetration Testing:** Proactively identify and remediate vulnerabilities before attackers can exploit them. <br><br> 6. **Secure Session Management:** Use strong, random session tokens, enforce HTTPS-only cookies, and invalidate sessions after logout or inactivity. |
+
+---
+
+## Reflection
+
+The PASTA threat modeling framework provided a structured approach to identifying security risks for the sneaker company app. Key takeaways:
+
+- **Business objectives** – Understanding what the app is supposed to do (connect buyers and sellers, process payments, enable messaging) helps prioritize security controls where they matter most.
+- **Technical scope** – Identifying the technology stack (API, PKI, SHA-256, SQL) allowed me to focus on the most critical components.
+- **Threat analysis** – Both internal and external threats need to be considered. Employees with excessive privileges, API vulnerabilities, and social engineering are all realistic risks.
+- **Vulnerabilities** – SQL injection, weak session management, and insecure API endpoints are common weaknesses that can be mitigated with proper coding practices and security controls.
+- **Attack modeling** – Visualizing attack paths (via the attack tree) helps stakeholders understand how an attacker could compromise the system.
+- **Security controls** – A combination of input validation, encryption, MFA, rate limiting, and regular testing creates a **defense-in-depth** strategy that significantly reduces the app's risk profile.
+
+This exercise reinforces the importance of integrating security into the software development lifecycle – identifying risks early is far more cost-effective than responding to breaches after they occur.
