@@ -140,12 +140,12 @@ sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &
 
 | Option | Purpose |
 | :--- | :--- |
-| -i eth0 | Capture data from the eth0 interface. |
-| -nn | Do not resolve IP addresses or ports to names (best practice for security). |
-| -c9 | Capture 9 packets and then exit. |
-| port 80 | Filter only HTTP traffic (default web port). |
-| -w capture.pcap | Save captured data to the named file. |
-| & | Run the command in the background. |
+| `-i eth0` | Capture data from the eth0 interface. |
+| `-nn` | Do not resolve IP addresses or ports to names (best practice for security). |
+| `-c9` | Capture 9 packets and then exit. |
+| `port 80` | Filter only HTTP traffic (default web port). |
+| `-w capture.pcap` | Save captured data to the named file. |
+| `&` | Run the command in the background. |
 
 
 ### 3.2 Generate Web Traffic
