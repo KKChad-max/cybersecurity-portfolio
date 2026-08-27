@@ -108,6 +108,7 @@ This lab reinforced the importance of network analysis in cybersecurity. Wiresha
 
 ## Screenshots
 
+
 ![VM Desktop showing lab completion timestamp](images/VM-Desktop-Timestamp.png)
 
 ![Wireshark interface showing packet list](images/wireshark-packet-list.png)
