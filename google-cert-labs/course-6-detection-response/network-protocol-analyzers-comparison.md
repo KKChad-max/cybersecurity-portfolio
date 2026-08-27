@@ -33,7 +33,7 @@ Network protocol analyzers (packet sniffers) are tools designed to capture and a
 
 ---
 
-## Differences (At Least 2)
+## Differences
 
 | Wireshark | tcpdump |
 | :--- | :--- |
@@ -42,7 +42,7 @@ Network protocol analyzers (packet sniffers) are tools designed to capture and a
 
 ---
 
-## Similarities (At Least 3)
+## Similarities
 
 1. **Both are open-source tools** that can be used free of charge for network analysis.
 2. **Both use libpcap/WinPcap** as their underlying packet capture library, supporting .pcap file formats.
