@@ -117,7 +117,7 @@ Content-Type: text/html; charset=UTF-8
 
 ### 2.4 Connection Teardown
 
-| Packet	Direction	Flags	Explanation
+| Packet | Direction | Flags | Explanation |
 | :--- | :--- | :--- | :--- |
 | 4 | 172.17.0.2 → 74.125.26.138 | [F.] (FIN‑ACK) | Client initiates connection close. |
 | 5 | 74.125.26.138 → 172.17.0.2 | [F.] (FIN‑ACK) | Server acknowledges and closes. |
@@ -140,12 +140,12 @@ sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &
 
 | Option | Purpose |
 | :--- | :--- |
-| -i eth0 | Capture data from the eth0 interface. |
-| -nn | Do not resolve IP addresses or ports to names (best practice for security). |
-| -c9 | Capture 9 packets and then exit. |
-| port 80 | Filter only HTTP traffic (default web port). |
-| -w capture.pcap | Save captured data to the named file. |
-| & | Run the command in the background. |
+| `-i eth0` | Capture data from the eth0 interface. |
+| `-nn` | Do not resolve IP addresses or ports to names (best practice for security). |
+| `-c9` | Capture 9 packets and then exit. |
+| `port 80` | Filter only HTTP traffic (default web port). |
+| `-w capture.pcap` | Save captured data to the named file. |
+| `&` | Run the command in the background. |
 
 
 ### 3.2 Generate Web Traffic
