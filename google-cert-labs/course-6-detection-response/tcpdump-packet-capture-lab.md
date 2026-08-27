@@ -117,7 +117,7 @@ Content-Type: text/html; charset=UTF-8
 
 ### 2.4 Connection Teardown
 
-| Packet	Direction	Flags	Explanation
+| Packet | Direction | Flags | Explanation |
 | :--- | :--- | :--- | :--- |
 | 4 | 172.17.0.2 → 74.125.26.138 | [F.] (FIN‑ACK) | Client initiates connection close. |
 | 5 | 74.125.26.138 → 172.17.0.2 | [F.] (FIN‑ACK) | Server acknowledges and closes. |
