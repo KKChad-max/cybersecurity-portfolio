@@ -23,4 +23,4 @@ This incident reinforced the importance of following a structured playbook durin
 - **Escalation is not failure:** Escalating to a Level‑2 analyst ensures that the incident receives the appropriate level of attention and containment.
 - **Documentation matters:** Updating the alert ticket with clear findings and rationale supports the investigation and helps other analysts understand the incident.
 
-The ability to follow a playbook, use threat intelligence tools, and escalate appropriately is essential for any SOC analyst. This investigation demonstrates readiness to handle real‑world phishing incidents.
+> The ability to follow a playbook, use threat intelligence tools, and escalate appropriately is essential for any SOC analyst. This investigation demonstrates readiness to handle real‑world phishing incidents.
