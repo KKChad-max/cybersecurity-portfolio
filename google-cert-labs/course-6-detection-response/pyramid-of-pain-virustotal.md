@@ -21,8 +21,8 @@ A financial services company experienced a security incident where an employee r
 | **TTPs (Tough)** | Tactic / Technique | Phishing (T1566), Execution (T1204), Command and Control (T1071), Defense Evasion (T1622) |
 | **Tools (Challenging)** | Malware Families | FlagPro, Fragtor, BFRL |
 | **Network/Host Artifacts (Annoying)** | Artifact | `bfsvc.exe`, `service-scan`, `runtime-modules` |
-| **Domain Names (Simple)** | Malicious Domain | *[Insert Malicious Domain]* |
-| **IP Addresses (Easy)** | Malicious IP | *[Insert Malicious IP]* |
+| **Domain Names (Simple)** | Malicious Domain | *a.sinkhole.yourtrap.com* |
+| **IP Addresses (Easy)** | Malicious IP | *108.177.126.100* |
 | **Hash Values (Trivial)** | SHA256 | `2f8e0a17ea5d81ddb7c47b7b3f3f9eccefdeed1d21da12cf8ba237c8e` |
 
 ---
