@@ -14,7 +14,7 @@ A financial services company experienced a security incident where an employee r
 
 ## Pyramid of Pain – Indicators of Compromise (IOCs)
 
-![Pyramid of Pain IOCs](images/Pyramid-of-Pain.png)
+![Pyramid of Pain IOCs](images/Pyramid-of-Pain-V1.png)
 
 | Pyramid Level | IOC | Value / Example |
 | :--- | :--- | :--- |
