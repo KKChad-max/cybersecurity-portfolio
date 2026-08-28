@@ -84,7 +84,7 @@ To prevent future recurrences, the organization is implementing the following ac
 
 ## Conclusion
 
-This incident highlights the critical importance of **secure web application development**, **proactive vulnerability scanning**, and **timely incident reporting**. The organization has taken significant steps to remediate the vulnerability and strengthen its security posture. By implementing the recommendations outlined in this report, the organization aims to prevent similar incidents in the future and protect customer data.
+This incident highlights the critical importance of **secure web application development**, **proactive vulnerability scanning**, and **timely incident reporting**. The organization has taken significant steps to remediate the vulnerability and strengthen its security posture. By implementing the recommendations outlined in this report, the organization aims to prevent similar incidents in the future and protect customer data
 
 ---
 
