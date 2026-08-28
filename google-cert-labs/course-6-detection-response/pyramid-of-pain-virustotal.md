@@ -67,6 +67,9 @@ The behaviors observed (`detect-debug-environment`, `long-sleeps`, `service-scan
 ## Next Steps
 
 - Block the identified IP addresses and domains at the firewall and proxy.
+
 - Quarantine the affected workstation and investigate for lateral movement.
+  
 - Update IDS/IPS signatures to detect FlagPro/Fragtor activity.
+  
 - Conduct security awareness training on phishing and password‑protected attachments.
