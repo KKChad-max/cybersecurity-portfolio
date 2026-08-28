@@ -25,8 +25,8 @@
 | Pyramid Level | IOC | Value / Example |
 | :--- | :--- | :--- |
 | **Hash Values (Trivial)** | SHA256 | `5deeae47eb0463463d8e7f77b7c2136ccfc80ade34f246a1e2fb9aba527f6b` |
-| **IP Addresses (Easy)** | Malicious IP | *[Insert IP from VirusTotal]* |
-| **Domain Names (Simple)** | Malicious Domain | *[Insert domain from VirusTotal]* |
+| **IP Addresses (Easy)** | Malicious IP | *108.177.126.100* |
+| **Domain Names (Simple)** | Malicious Domain | *a.sinkhole.yourtrap.com* |
 | **Network/Host Artifacts (Annoying)** | Artifact | *[Suspicious file names, registry keys, or user agents found in the report]* |
 | **Tools (Challenging)** | Tool Name | *[e.g., Cobalt Strike, Mimikatz, or specific malware family]* |
 | **TTPs (Tough)** | Tactic / Technique | Phishing (T1566), Execution (T1204), Command and Control (T1071) |
