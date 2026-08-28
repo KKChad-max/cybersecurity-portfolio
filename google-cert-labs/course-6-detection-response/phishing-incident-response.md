@@ -79,7 +79,7 @@ A level‑one SOC analyst at a financial services company received a phishing al
 - Conduct a security awareness briefing on phishing and password‑protected attachments.
 - Escalate to the Level‑2 SOC team for further incident response and containment.
 
----
+
 
 ## References
 
