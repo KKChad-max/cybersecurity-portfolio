@@ -92,3 +92,7 @@ Yes, significantly. I now understand that incident response is not just about re
 **3. Was there a specific tool or concept that you enjoyed the most?**
 
 I enjoyed working with Suricata and the `jq` command the most. Writing custom rules and then seeing them trigger alerts on network traffic made the detection process feel tangible and rewarding. Using `jq` to parse the `eve.json` logs was also a highlight because it showed how to efficiently extract meaningful data from large log files – a critical skill for any SOC analyst.
+
+---
+
+> *This incident handler's journal was created as part of the Google Cybersecurity Certificate – Course 6: Sound the Alarm. It documents real‑world incident scenarios, hands‑on tool usage, and reflections on the NIST Incident Response Lifecycle. The journal serves as a portfolio piece demonstrating practical skills in detection, analysis, and response.*
