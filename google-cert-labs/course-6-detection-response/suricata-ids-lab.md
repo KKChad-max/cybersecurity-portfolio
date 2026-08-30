@@ -53,7 +53,7 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"Suspicious HTTP Request"; si
 
 I ran Suricata against the sample.pcap file using the custom rule file, specifying the log directory for the output:
 
-``bash
+```bash
 sudo suricata -r sample.pcap -S custom_rules -l /var/log/suricata/
 ```
 
