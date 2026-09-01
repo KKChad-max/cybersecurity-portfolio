@@ -132,7 +132,7 @@ Original: ['madebowa', 'jnguyen', 'tbecker', 'nhersh', 'redwards']
 Updated: ['madebowa', 'jnguyen', 'tbecker', 'nhersh', 'redwards', 'lpoe']
 ```
 
-**Key Insight:** Variables in Python are dynamic. Reassigning `sername_list` to a new list overwrites the previous data, allowing for easy updates as organizational needs change.
+**Key Insight:** Variables in Python are dynamic. Reassigning `username_list` to a new list overwrites the previous data, allowing for easy updates as organizational needs change.
 
 ---
 
