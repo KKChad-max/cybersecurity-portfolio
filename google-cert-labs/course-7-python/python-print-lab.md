@@ -33,3 +33,7 @@ print("Python is useful for cybersecurity field")
 ## Reflection
 
 This lab was a gentle introduction to Python in a notebook environment. It reinforced the importance of documentation through comments and the practical use of print() for output. I am now better prepared to write and run Python code as I progress through Course 7.
+
+---
+
+> This lab was completed as part of the Google Cybersecurity Certificate – Course 7: Automate Cybersecurity Tasks with Python.
