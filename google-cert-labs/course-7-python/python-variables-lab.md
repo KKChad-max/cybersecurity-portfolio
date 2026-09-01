@@ -69,7 +69,7 @@ The next step was to manage the authorized usernames. I created a variable named
 
 **Code & Output:**
 
-``python
+```python
 # Assign `username_list` to the list of usernames who are allowed to access the device
 username_list = ["madebowa", "jnguyen", "tbecker", "nhersh", "redwards"]
 
