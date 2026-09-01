@@ -280,3 +280,7 @@ These skills are directly transferable to real-world security tasks, such as wri
 This lab reinforced the critical importance of understanding data types in Python. In a security context, mismanaging data types—such as treating a list as a string—could break critical automation scripts. The ability to identify and manipulate these types efficiently is a foundational step toward building robust, error-free security tools.
 
 I found the Boolean logic particularly insightful, as it directly mirrors the decision-making processes used in incident response and access control. Mastering these basics prepares me for more advanced concepts, such as loops and conditionals, which will be essential for automating threat detection and response tasks.
+
+---
+
+> This lab was completed as part of the Google Cybersecurity Certificate – Course 7: Automate Cybersecurity Tasks with Python.
