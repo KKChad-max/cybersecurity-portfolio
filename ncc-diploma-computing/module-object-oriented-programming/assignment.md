@@ -68,17 +68,18 @@ This assignment involved the design and implementation of a **Fitness Tracker Ap
 
 ### Code Structure
 
-
+```text
 FitnessTracker/
-├── Program.cs # Main application logic and user interface
-├── User.cs # User class with authentication and goal tracking
-├── Activity.cs # Abstract base class for all activities
-├── Walking.cs # Walking activity with specific metrics
-├── Swimming.cs # Swimming activity with specific metrics
-├── Running.cs # Running activity with specific metrics
-├── Cycling.cs # Cycling activity with specific metrics
-├── StrengthTraining.cs # Strength Training activity with specific metrics
-└── Yoga.cs # Yoga activity with specific metrics
+├── Program.cs                # Main application logic and user interface
+├── User.cs                   # User class with authentication and goal tracking
+├── Activity.cs               # Abstract base class for all activities
+├── Walking.cs                # Walking activity with specific metrics
+├── Swimming.cs               # Swimming activity with specific metrics
+├── Running.cs                # Running activity with specific metrics
+├── Cycling.cs                # Cycling activity with specific metrics
+├── StrengthTraining.cs       # Strength Training activity with specific metrics
+└── Yoga.cs                   # Yoga activity with specific metrics
+```
 
 ---
 
