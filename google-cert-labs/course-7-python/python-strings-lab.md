@@ -304,7 +304,7 @@ This lab provided hands‑on practice with Python string operations in a securit
 
 ### Bridging the Gap to Real‑World Security Automation
 
-While this lab focused on static strings (IDs and URLs), the **exact same principles** power my `text_parser.py` script—a practical log‑analysis tool I built in my portfolio. 
+While this lab focused on static strings (IDs and URLs), the **exact same principles** power my [`text_parser.py`](https://github.com/KKChad-max/cybersecurity-portfolio/blob/main/python-practice/text_parser.py) script—a practical log‑analysis tool I built in my portfolio.
 
 In `text_parser.py`, I analyze log files to detect critical events (like authentication failures). The bridge between this lab and that script is **string methods**:
 
