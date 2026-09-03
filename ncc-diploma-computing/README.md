@@ -30,6 +30,7 @@ The NCC Level 4 Diploma in Computing provides a comprehensive foundation in comp
 | **Object-Oriented Programming with Computers** | Practical programming using C++ / Java, covering OOP concepts, classes, inheritance, polymorphism, and application building. | [View Assignment](module-object-oriented-programming/assignment.md) |
 | **Software Engineering** | SDLC, agile methodologies, testing, and project management. | [View Assignment](module-5-software-engineering/assignment.md) |
 | **Front-End Website Development** | HTML, CSS, W3C validation, accessibility, and responsive design for a coffee shop website. | [View Assignment](module-front-end-development/assignment.md) |
+| **Algorithms and Mathematical Concepts** | Propositional logic, predicate logic, data structures, sorting/searching algorithms, and route optimisation for supply chain logistics. | [View Assignment](module-algorithms-mathematical/assignment.md) |
 
 ---
 
