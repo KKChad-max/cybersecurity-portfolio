@@ -76,7 +76,7 @@ This assignment involved the design and implementation of a relational database 
 | phone          |                          | phone          |
 +----------------+                          +----------------+
 
-
+```
 
 ---
 
@@ -373,7 +373,7 @@ GO
 
 ### 1. Update Gardening Tools Prices (10% Increase)
 
-``sql
+```sql
 UPDATE Product 
 SET price = price * 1.10 
 WHERE type = 'Gardening Tool';
