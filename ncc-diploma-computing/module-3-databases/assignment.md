@@ -380,14 +380,14 @@ WHERE type = 'Gardening Tool';
 ```
 **Result:**
 
-```text
-product_id	name	type	price
-1	Rose Bush	Plant	19.99
-2	Pruning Shears	Gardening Tool	32.99
-3	Potting Soil	Accessory	12.50
-4	Tomato Plant	Plant	8.99
-5	Garden Gloves	Accessory	14.95
-```
+| product_id | name | type | price |
+| :--- | :--- | :--- | :--- |
+| 1 | Rose Bush | Plant | 19.99 |
+| 2 | Pruning Shears | Gardening Tool | 32.99 |
+| 3 | Potting Soil | Accessory | 12.50 |
+| 4 | Tomato Plant | Plant | 8.99 |
+| 5 | Garden Gloves | Accessory | 14.95 |
+
 
 ### 2. Highest-Priced Items by Category
 
@@ -404,12 +404,12 @@ WHERE rank = 1;
 
 **Result:**
 
-```text
-name	type	price	description
-Garden Gloves	Accessory	14.95	Durable leather gloves
-Pruning Shears	Gardening Tool	32.99	Stainless steel shears
-Rose Bush	Plant	19.99	Pink flowering rose bush
-```
+| name | type | price | description |
+| :--- | :--- | :--- | :--- |
+| Garden Gloves | Accessory | 14.95 | Durable leather gloves |
+| Pruning Shears | Gardening Tool | 32.99 | Stainless steel shears |
+| Rose Bush | Plant | 19.99 | Pink flowering rose bush |
+
 
 ### 3. Monthly Sales Summary (October 2023)
 
@@ -426,12 +426,11 @@ GROUP BY p.type;
 
 **Result:**
 
-```text
-type	total_quantity	total_revenue
-Accessory	4	52.45
-Gardening Tool	1	29.99
-Plant	7	84.93
-```
+| type | total_quantity | total_revenue |
+| :--- | :--- | :--- |
+| Accessory | 4 | 52.45 |
+| Gardening Tool | 1 | 29.99 |
+| Plant | 7 | 84.93 |
 
 ### 4. Employee Revenue Ranking (Up to 31 October 2023)
 
@@ -450,13 +449,12 @@ ORDER BY [Total Revenue] DESC;
 
 **Result:**
 
-```text
-employee_id	Employee Name	Total Revenue	Rank
-1	Alice Green	69.97	1
-3	Charlie Rose	44.95	2
-2	Bob Brown	37.50	3
-4	Diana Bloom	14.95	4
-```
+| employee_id | Employee Name | Total Revenue | Rank |
+| :--- | :--- | :--- | :--- |
+| 1 | Alice Green | 69.97 | 1 |
+| 3 | Charlie Rose | 44.95 | 2 |
+| 2 | Bob Brown | 37.50 | 3 |
+| 4 | Diana Bloom | 14.95 | 4 |
 
 ### 5. Upcoming Events (Next Month)
 
