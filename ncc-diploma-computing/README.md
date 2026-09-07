@@ -16,6 +16,8 @@ The NCC Level 4 Diploma in Computing provides a comprehensive foundation in comp
 - Object-Oriented Design and Analysis
 - Object-Oriented Programming with Computers
 - Software Engineering
+- Front-End Website Development
+- Algorithms and Mathematical Concepts
 
 ---
 
@@ -42,6 +44,8 @@ The NCC Level 4 Diploma in Computing provides a comprehensive foundation in comp
 - Object-oriented system modelling and UML.
 - Object-oriented programming (C++ / Java) – building practical applications.
 - Software development lifecycle and project management.
+- Front-end web development with HTML, CSS, and accessibility standards.
+- Algorithm design, analysis, and mathematical reasoning for real-world problems.
 
 ---
 
@@ -55,6 +59,8 @@ The skills from this diploma directly support my work in cybersecurity:
 - **Computer Systems** → Understanding OS vulnerabilities and system hardening.
 - **Object-Oriented Design** → Structuring maintainable Python scripts for security automation.
 - **Object-Oriented Programming** → Writing robust, scalable Python scripts for automation and security tools.
+- **Front-End Development** → Understanding web application security and secure user interfaces.
+- **Algorithms** → Building efficient security tools and automating threat detection.
 
 ---
 
