@@ -76,6 +76,7 @@ Building a strong foundation in **network security, Linux, SQL, Python, and crit
 **Next up:**
 - TryHackMe rooms and advanced defensive security tools.
 - Completing the Google Cybersecurity Certificate (Courses 7–9).
+- Completing the Google AI Professional Certificate (Courses 5–8).
 - Preparing for the **CompTIA Security+** certification exam (targeting September/October 2026).
 
 ---
