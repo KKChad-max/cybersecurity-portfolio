@@ -52,6 +52,9 @@
 | `git add .` | Stage all changes in the current folder. |
 | `git commit -m "message"` | Save staged changes with a comment. |
 | `git push` | Upload commits to GitHub. |
+| `git pull origin main` | Fetch and merge remote changes (used when `git push` is rejected). |
+| `git pull --rebase origin main` | Fetch remote changes and rebase local commits on top (cleaner history). |
+| `git sync` | **Alias command** – pulls remote changes with rebase and pushes in one go. |
 | `git rm filename.txt` | Remove a file from the repo. |
 
 ### 🚨 The Token Trap
