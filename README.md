@@ -31,7 +31,14 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 ## 📂 Portfolio Contents
 
 - **[NCC Level 4 Diploma in Computing](/ncc-diploma-computing/)**
-  - – 8 academic modules covering Computer Systems, Computer Networks, Databases, Object Oriented Design and Analysis, Object Oriented with Computers Programming, Software Engineering, Front-End Development, and Algorithms and Mathematical Concepts
+8 academic modules covered
+  - Computer Systems,
+  - Computer Networks,
+  - Databases, Object Oriented Design and Analysis,
+  - Object Oriented with Computers Programming,
+  - Software Engineering,
+  - Front-End Development, and
+  - Algorithms and Mathematical Concepts
 
 - **[Linux Fundamentals](/linux-fundamentals)** 
   - OverTheWire Bandit **0–25** writeup with walkthroughs, screenshots, and troubleshooting notes.
@@ -47,7 +54,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
   - VirtualBox + Ubuntu LTS VM setup. Check `setup-notes.md` for hardware specs and Guest Additions configuration.
 
 - **[Google Cert Labs](/google-cert-labs)**
-  - **Courses 1–4 completed** with detailed notes, incident reports, security audits, and SQL/Linux portfolio activities.
+  - **Courses 1–7 completed** with detailed notes, incident reports, security audits, and SQL/Linux portfolio activities.
   - **Courses 5–8** – In Progress.
 
 - **[TryHackMe Writeups](/tryhackme-writeups)** *(In Progress)*
