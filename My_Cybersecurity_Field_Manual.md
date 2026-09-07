@@ -11,7 +11,7 @@
 2. [Linux Terminal & SSH Basics](#-linux-terminal--ssh-basics)
 3. [Linux User & System Administration](#-linux-user--system-administration-google-cert)
 4. [Getting Help in Linux](#-getting-help-in-linux-google-cert)
-5. [Bandit Commands Reference (0–20)](#-bandit-commands-reference-020)
+5. [Bandit Commands Reference (0–25)](#-bandit-commands-reference-025)
    - [Finding & Reading Files](#finding--reading-files)
    - [Searching & Parsing Text](#searching--parsing-text)
    - [Network & Ports](#network--ports)
@@ -80,7 +80,7 @@
 
 ---
 
-## ⚙️ Bandit Commands Reference (0–20)
+## ⚙️ Bandit Commands Reference (0–25)
 
 ### Finding & Reading Files
 | Command | What it does |
@@ -125,6 +125,19 @@
 | `./bandit20-do cat /etc/bandit_pass/bandit20` | Run a command as another user via SetUID. |
 | `ssh bandit18@host -p 2220 "cat readme"` | Run a remote command without loading `.bashrc`. |
 
+### Cron Jobs & Advanced Bandit (Levels 21–25)
+| Command | What it does |
+| :--- | :--- |
+| `cat /etc/cron.d/cronjob_bandit22` | View scheduled cron jobs for bandit22. |
+| `cat /usr/bin/cronjob_bandit22.sh` | Read the script executed by the cron job. |
+| `echo "I am user bandit23" \| md5sum \| cut -d ' ' -f 1` | Compute MD5 hash to find the temp file name. |
+| `cat /tmp/<hash>` | Read the password written by the cron script. |
+| `cp grab.sh /var/spool/bandit24/foo/` | Plant a script in the cron spool directory. |
+| `for i in {0000..9999}; do echo "$PASS $i" \| nc localhost 30002; done` | Brute-force a 4-digit PIN on port 30002. |
+| `ssh -i bandit26.sshkey bandit26@localhost -p 2220` | Connect using an SSH key (Level 25). |
+| `stty rows 1` | Shrink terminal to force `more` pager pause (rbash escape). |
+| `:set shell=/bin/sh` and `:shell` | Escape `rbash` using the `vi` trick. |
+
 ---
 
 ## 🤖 Cron Jobs & Restricted Shells (rbash)
@@ -141,6 +154,7 @@
 
 **Syntax to remember:**
 
+```text
 command_to_run
 │ │ │ │ │
 │ │ │ │ └─── Day of week (0-6)
@@ -148,6 +162,7 @@ command_to_run
 │ │ └─────── Day of month (1-31)
 │ └───────── Hour (0-23)
 └─────────── Minute (0-59)
+```
 
 Example: `* * * * * bandit22 /usr/bin/cronjob_bandit22.sh` runs every minute as user `bandit22`.
 
