@@ -603,6 +603,69 @@ My lab example: I decrypted a Caesar cipher in Linux using tr and used `sha256su
 
 ---
 
+## 🎓 Computing Fundamentals (NCC Diploma)
+
+This section bridges the academic theory from my NCC Level 4 Diploma directly to my cybersecurity practice. Understanding these foundational concepts makes me a more effective security analyst.
+
+---
+
+### Object-Oriented Programming (OOP) Principles
+
+| Principle | Definition | Cybersecurity Application |
+| :--- | :--- | :--- |
+| **Encapsulation** | Bundling data and methods within a class, hiding internal state. | Writing secure Python scripts (e.g., `log_analyzer.py`) where sensitive data is protected from direct manipulation. |
+| **Inheritance** | Creating new classes based on existing ones. | Building modular security tools – a base `Activity` class (from the Fitness Tracker lab) extended by `Walking`, `Swimming`, etc. |
+| **Polymorphism** | Using a single interface to represent different data types. | Implementing different `CalculateCalories()` methods for different activities, similar to how security tools handle different log formats. |
+
+---
+
+### Software Development Lifecycle (SDLC)
+
+| Phase | Description | Cybersecurity Relevance |
+| :--- | :--- | :--- |
+| **Requirements** | Gathering what the system must do. | Defining security requirements (e.g., encryption, MFA) before coding begins. |
+| **Design** | Architecture and modelling (UML). | Threat modeling (PASTA) and secure design principles (least privilege, defense in depth). |
+| **Implementation** | Writing the code. | Secure coding practices (input validation, avoiding SQL injection). |
+| **Testing** | Validating the system. | Penetration testing, vulnerability scanning, and security regression testing. |
+| **Deployment & Maintenance** | Releasing and updating the system. | Patch management, monitoring for vulnerabilities (CVE), and incident response. |
+
+---
+
+### Data Structures & Algorithms
+
+| Concept | Definition | Cybersecurity Application |
+| :--- | :--- | :--- |
+| **Hash Tables** | Key-value storage with O(1) lookup. | **`log_analyzer.py`**: Using `defaultdict` to count failed login attempts per IP address in real-time. |
+| **Graphs** | Nodes and edges representing relationships. | **Network Mapping**: Representing network topologies to identify attack paths (e.g., using Dijkstra's algorithm to find the shortest route for a worm or lateral movement). |
+| **Sorting Algorithms** | Ordering data (e.g., QuickSort, MergeSort). | **Log Analysis**: Prioritizing threats by severity or timestamp. |
+| **Searching Algorithms** | Finding data (e.g., Binary Search). | **Threat Intelligence**: Quickly retrieving IOCs (Indicators of Compromise) from large databases. |
+
+---
+
+### Databases & Normalization
+
+| Concept | Definition | Cybersecurity Application |
+| :--- | :--- | :--- |
+| **Normalization (3NF)** | Organizing data to reduce redundancy and improve integrity. | Designing secure, efficient databases for storing user logs, audit trails, and incident reports. |
+| **SQL Joins** | Combining data from multiple tables. | **Forensics**: Joining `log_in_attempts` with `employees` to trace suspicious activity to specific users. |
+| **ACID Properties** | Atomicity, Consistency, Isolation, Durability. | Ensuring that security logs cannot be partially written or corrupted during an attack. |
+
+---
+
+### Networking & the OSI Model
+
+| Layer | Function | Cybersecurity Application |
+| :--- | :--- | :--- |
+| **Application (L7)** | User-facing apps (HTTP, FTP). | Detecting web attacks (XSS, SQLi) and analyzing application-layer logs. |
+| **Transport (L4)** | Reliable data transfer (TCP, UDP). | Firewall rules (blocking ports), detecting SYN floods and port scans. |
+| **Network (L3)** | Routing and addressing (IP). | IP spoofing detection, network segmentation, and ACLs. |
+| **Data Link (L2)** | Error-free frame transfer (Ethernet). | MAC address filtering, ARP spoofing prevention. |
+
+---
+
+> *This section was built from the NCC Level 4 Diploma in Computing, demonstrating how formal academic training provides the theoretical foundation for practical cybersecurity skills.*
+
+---
 
 ## 💡 The "Pro" Takeaways (What Actually Changed in My Brain)
 
