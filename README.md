@@ -31,7 +31,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 ## 📂 Portfolio Contents
 
 - **[NCC Level 4 Diploma in Computing](/ncc-diploma-computing/)**
-  - – 8 academic modules covering Computer Systems, Networks, Databases, OOP, Software Engineering, Front-End Development, and Algorithms.
+  - – 8 academic modules covering Computer Systems, Computer Networks, Databases, Object Oriented Design and Analysis, Object Oriented with Computers Programming, Software Engineering, Front-End Development, and Algorithms and Mathematical Concepts
 
 - **[Linux Fundamentals](/linux-fundamentals)** 
   - OverTheWire Bandit **0–25** writeup with walkthroughs, screenshots, and troubleshooting notes.
