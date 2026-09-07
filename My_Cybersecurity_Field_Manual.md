@@ -31,7 +31,13 @@
    - [Web-Based Exploits](#web-based-exploits)
    - [Social Engineering & Malware](#social-engineering--malware)
    - [Cryptography & Hashing](#cryptography--hashing)
-11. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
+11. [🎓 Computing Fundamentals (NCC Diploma)](#-computing-fundamentals-ncc-diploma)
+    - [Object-Oriented Programming (OOP) Principles](#object-oriented-programming-oop-principles)
+    - [Software Development Lifecycle (SDLC)](#software-development-lifecycle-sdlc)
+    - [Data Structures & Algorithms](#data-structures--algorithms)
+    - [Databases & Normalization](#databases--normalization)
+    - [Networking & the OSI Model](#networking--the-osi-model)
+12. [The "Pro" Takeaways](#-the-pro-takeaways-what-actually-changed-in-my-brain)
 
 ---
 
