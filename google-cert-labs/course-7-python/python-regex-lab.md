@@ -38,7 +38,10 @@ I examined the contents of a string containing device IDs.
 **Code:**
 
 ```python
+# Assign `devices` to a string containing device IDs, each device ID represented by alphanumeric characters
 devices = "r262c36 67bv8fy 41jlu2e r151dm4 1270t3o 42dr56i r15xkh9 2j33krk 253be78 ac742a1 r15u9q5 zh86b21 i1286fq 9x482kt 6oa6mc"
+
+# Display the contents of `devices`
 print(devices)
 ```
 
@@ -77,8 +80,13 @@ I used `re.findall()` to extract all device IDs that match the pattern.
 **Code:**
 
 ```python
+# Assign `devices` to a string containing device IDs, each device ID represented by alphanumeric characters
 devices = "r262c36 67bv8fy 41jlu2e r151dm4 1270t3o 42dr56i r15xkh9 2j33krk 253be78 ac742a1 r15u9q5 zh86b21 i1286fq 9x482kt 6oa6mc"
+
+# Assign `target_pattern` to a regular expression pattern for finding device IDs that start with "r15"
 target_pattern = r"r15\w+"
+
+# Use `re.findall()` to find the device IDs that start with "r15" and display the results
 print(re.findall(target_pattern, devices))
 ```
 
@@ -99,7 +107,10 @@ I examined the contents of a network security log file.
 **Code:**
 
 ```python
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts
 log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 1"
+
+# Display contents of `log_file`
 print(log_file)
 ```
 
@@ -140,8 +151,13 @@ I used `re.findall()` with the strict pattern.
 **Code:**
 
 ```python
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts
 log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 1"
+
+# Assign `pattern` to a regular expression pattern that will match with IP addresses of the form xxx.xxx.xxx.xxx
 pattern = "\d\d\d\.\d\d\d\.\d\d\d\.\d\d\d"
+
+# Use the `re.findall()` function on `pattern` and `log_file` to extract the IP addresses of the form xxx.xxx.xxx.xxx and display
 print(re.findall(pattern, log_file))
 ```
 
@@ -162,8 +178,13 @@ I updated the pattern to allow one to three digits per segment using `+`.
 **Code:**
 
 ```python
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts
 log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 1"
+
+# Update `pattern` to a regular expression pattern that will match with IP addresses with any variation in the number of digits in the IP address
 pattern = r"\d+\.\d+\.\d+\.\d+"
+
+# Use the `re.findall()` function on `pattern` and `log_file` to extract the IP addresses of the updated form specified above and print
 print(re.findall(pattern, log_file))
 ```
 
@@ -184,9 +205,16 @@ I refined the pattern using `{1,3}` to match exactly one to three digits per seg
 **Code:**
 
 ```python
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts
 log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 1"
+
+# Assign `pattern` to a regular expression that matches with all valid IP addresses and only those
 pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+
+# Use `re.findall()` on `pattern` and `log_file` and assign `valid_ip_addresses` to the output
 valid_ip_addresses = re.findall(pattern, log_file)
+
+# Display the contents of `valid_ip_addresses`
 print(valid_ip_addresses)
 ```
 
@@ -207,7 +235,10 @@ I displayed a list of IP addresses that had been previously flagged for unusual 
 **Code:**
 
 ```python
+# Assign `flagged_addresses` to a list of IP addresses that have been previously flagged for unusual activity
 flagged_addresses = ["192.168.190.178", "192.168.96.200", "192.168.174.117", "192.168.168.144"]
+
+# Display the contents of `flagged_addresses`
 print(flagged_addresses)
 ```
 
@@ -228,15 +259,26 @@ I looped through the extracted IP addresses and checked if each was flagged.
 **Code:**
 
 ```python
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts
 log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 1"
+
+# Assign `pattern` to a regular expression that matches with all valid IP addresses and only those
 pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+
+# Use `re.findall()` on `pattern` and `log_file` and assign `valid_ip_addresses` to the output
 valid_ip_addresses = re.findall(pattern, log_file)
 
+# Assign `flagged_addresses` to a list of IP addresses that have been previously flagged for unusual activity
 flagged_addresses = ["192.168.190.178", "192.168.96.200", "192.168.174.117", "192.168.168.144"]
 
+# Iterative statement begins here
+# Loop through `valid_ip_addresses` with `address` as the loop variable
 for address in valid_ip_addresses:
+    # Conditional begins here
+    # If `address` belongs to `flagged_addresses`, display "The IP address ______ has been flagged for further analysis."
     if address in flagged_addresses:
         print("The IP address", address, "has been flagged for further analysis.")
+    # Otherwise, display "The IP address ______ does not require further analysis."
     else:
         print("The IP address", address, "does not require further analysis.")
 ```
