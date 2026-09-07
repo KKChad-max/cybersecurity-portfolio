@@ -62,6 +62,68 @@
 - **Solution:** Generate a **Personal Access Token** (Settings → Developer settings → Tokens).  
   Use that token as the password when `git push` asks for it.
 
+  ## 📁 Portfolio Management Commands
+
+These commands are used daily to manage the files and folders in your repository.
+
+| Command | What it does | Example |
+| :--- | :--- | :--- |
+| `mkdir <folder>` | Create a new directory. | `mkdir google-cert-labs/course-7-python` |
+| `touch <file>` | Create a new empty file. | `touch notes.md` |
+| `notepad <file>` | Open a file in Windows Notepad for editing. | `notepad README.md` |
+| `code <file>` | Open a file or folder in VS Code. | `code .` |
+| `cp <source> <dest>` | Copy a file or folder. | `cp ~/Desktop/screenshot.png images/` |
+| `mv <old> <new>` | Move or rename a file. | `mv old.md new.md` |
+| `rm <file>` | Delete a file. | `rm test.txt` |
+| `rmdir <folder>` | Delete an empty directory. | `rmdir temp/` |
+| `rm -rf <folder>` | **⚠️ Force delete** a folder and all its contents (use with caution!). | `rm -rf old-backup/` |
+| `ls` | List files in the current directory. | `ls` |
+| `pwd` | Show the current working directory path. | `pwd` |
+| `cd <path>` | Change directory. | `cd ~/cybersecurity-portfolio` |
+
+---
+
+### 💡 My Typical Workflow
+
+```bash
+# 1. Navigate to the repo
+cd ~/cybersecurity-portfolio
+
+# 2. Create a new folder for a module
+mkdir -p google-cert-labs/course-7-python
+
+# 3. Create a new file
+touch notes.md
+
+# 4. Edit the file
+notepad notes.md
+
+# 5. Copy a screenshot into the repo
+cp ~/
+
+# 6. Stage, commit, and sync
+git add .
+git commit -m "Add notes and screenshot"
+git sync
+
+### 🛠️ My Git Workflow
+
+After setting up the `git sync` alias, my standard workflow is:
+```
+
+If git push fails (e.g., due to a conflict), I use:
+
+```bash
+git pull origin main
+# Resolve any conflicts, then:
+git push
+```
+
+Alias setup (one-time):
+```bash
+git config --global alias.sync '!git pull --rebase && git push'
+```
+
 ---
 
 ## 🖥️ Linux Terminal & SSH Basics
