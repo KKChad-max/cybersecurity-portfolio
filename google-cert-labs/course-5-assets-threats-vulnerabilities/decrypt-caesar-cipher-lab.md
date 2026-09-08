@@ -94,6 +94,7 @@ analyst@e40e264877f8:~$ openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out 
 
 ---
 
+
 ## Step 6: Verification
 
 **I listed the directory to confirm the recovered file was created:**
