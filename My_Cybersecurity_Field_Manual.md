@@ -1,7 +1,7 @@
 # 🧠 My Cybersecurity Field Manual
 
 > **Author:** Chadrack Kalongo  
-> **Last Updated:** August 2026  
+> **Last Updated:** September 2026  
 > **Context:** OverTheWire Bandit 0–25, Google Cybersecurity Certificate (Linux, SQL, Python) & Security Automation
 
 ---
@@ -17,12 +17,17 @@
    - [Network & Ports](#network--ports)
    - [Encoding & Compression](#encoding--compression)
    - [SSH Keys & Privilege Escalation](#ssh-keys--privilege-escalation)
-6. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)  <!-- NEW -->
+6. [Cron Jobs & Restricted Shells (rbash)](#-cron-jobs--restricted-shells-rbash)
    - [Cron Jobs](#cron-jobs)
    - [Restricted Shell (rbash)](#restricted-shell-rbash)
 7. [SQL (Structured Query Language)](#-sql-structured-query-language)
 8. [The Troubleshooting Hall of Fame](#-the-troubleshooting-hall-of-fame-the-struggles)
-9. [Python Automation Toolkit](#-python-automation-toolkit)
+9. [Python in Cybersecurity](#-python-in-cybersecurity)
+   - [Core Python Syntax](#core-python-syntax)
+   - [File Handling & Parsing](#file-handling--parsing)
+   - [Regular Expressions (RegEx)](#regular-expressions-regex)
+   - [Debugging Strategies](#debugging-strategies)
+   - [Automation Scripts](#automation-scripts)
 10. [Assets, Threats, and Vulnerabilities](#-assets-threats-and-vulnerabilities)
    - [Asset Management & Classification](#asset-management--classification)
    - [Risk Assessment](#risk-assessment)
@@ -62,7 +67,9 @@
 - **Solution:** Generate a **Personal Access Token** (Settings → Developer settings → Tokens).  
   Use that token as the password when `git push` asks for it.
 
-  ## 📁 Portfolio Management Commands
+---
+
+## 📁 Portfolio Management Commands
 
 These commands are used daily to manage the files and folders in your repository.
 
@@ -81,8 +88,6 @@ These commands are used daily to manage the files and folders in your repository
 | `pwd` | Show the current working directory path. | `pwd` |
 | `cd <path>` | Change directory. | `cd ~/cybersecurity-portfolio` |
 
----
-
 ### 💡 My Typical Workflow
 
 ```bash
@@ -99,19 +104,29 @@ touch notes.md
 notepad notes.md
 
 # 5. Copy a screenshot into the repo
-cp ~/
+cp ~/Desktop/screenshot.png google-cert-labs/course-7-python/images/
 
 # 6. Stage, commit, and sync
 git add .
 git commit -m "Add notes and screenshot"
 git sync
+```
 
 ### 🛠️ My Git Workflow
 
 After setting up the `git sync` alias, my standard workflow is:
+
+```bash
+# 1. Make changes to files
+# 2. Stage and commit
+git add .
+git commit -m "Describe your changes"
+
+# 3. Sync with GitHub (pull + push in one command)
+git sync
 ```
 
-If git push fails (e.g., due to a conflict), I use:
+If `git sync` fails (e.g., due to a conflict), I use:
 
 ```bash
 git pull origin main
@@ -119,7 +134,8 @@ git pull origin main
 git push
 ```
 
-Alias setup (one-time):
+**Alias setup (one-time):**
+
 ```bash
 git config --global alias.sync '!git pull --rebase && git push'
 ```
@@ -184,7 +200,7 @@ git config --global alias.sync '!git pull --rebase && git push'
 
 ### SSH Keys & Privilege Escalation
 | Command | What it does |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | `chmod 600 sshkey.private` | Make a private key secure (SSH demands this). |
 | `ssh -i sshkey.private user@host -p 2220` | Log in using a private key. |
 | `./bandit20-do cat /etc/bandit_pass/bandit20` | Run a command as another user via SetUID. |
@@ -192,7 +208,7 @@ git config --global alias.sync '!git pull --rebase && git push'
 
 ### Cron Jobs & Advanced Bandit (Levels 21–25)
 | Command | What it does |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | `cat /etc/cron.d/cronjob_bandit22` | View scheduled cron jobs for bandit22. |
 | `cat /usr/bin/cronjob_bandit22.sh` | Read the script executed by the cron job. |
 | `echo "I am user bandit23" \| md5sum \| cut -d ' ' -f 1` | Compute MD5 hash to find the temp file name. |
@@ -255,11 +271,14 @@ Example: `* * * * * bandit22 /usr/bin/cronjob_bandit22.sh` runs every minute as 
    ```vim
    :set shell=/bin/sh
    :shell
+   ```
 
-Alternative Bypass (Direct Command):
+**Alternative Bypass (Direct Command):**
 If you only need to read one file, you can skip the restricted shell entirely:
 
-`ssh -i key user@host -p 2220 "cat /etc/bandit_pass/nextlevel"`
+```bash
+ssh -i key user@host -p 2220 "cat /etc/bandit_pass/nextlevel"
+```
 
 ---
 
@@ -286,15 +305,11 @@ client.connect(hostname="bandit.labs.overthewire.org", port=2220, username="band
 - **Why:** OverTheWire blocks password logins from localhost to force SSH key usage.
 - **Solution:** Always jump to the next level from my **local machine** (outside SSH), or use the key method without interactive passwords.
 
----
-
 ### 3. The `diff` Mix-up (Level 17 → 18)
 - **Situation:** Ran `diff passwords.new passwords.old`. Output showed `< OLD` and `> NEW`.
 - **My mistake:** I tried the line with `>` (thinking "greater" = newer). It failed.
 - **Rule:** `diff file1 file2` → `file1` is on the left (`<`). Since `passwords.new` is on the left, the password is the line after `<`!
 - **Takeaway:** Always read the context of the output carefully.
-
----
 
 ### 4. The `.bashrc` Instant Logout (Level 18)
 - **Situation:** Logged into `bandit18` and got kicked out immediately.
@@ -362,8 +377,6 @@ man -k "create new group"
 
 ---
 
-
-
 ## 🗄️ SQL (Structured Query Language)
 
 ### What is SQL?
@@ -406,7 +419,7 @@ SQL is used to interact with relational databases. For security professionals, i
 ### SQL Joins
 
 | Join Type | What it does |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | **INNER JOIN** | Returns only rows that have a match in both tables |
 | **LEFT JOIN** | Returns all rows from the left table, and matches from the right table |
 | **RIGHT JOIN** | Returns all rows from the right table, and matches from the left table |
@@ -418,6 +431,7 @@ SELECT *
 FROM machines
 INNER JOIN employees ON machines.device_id = employees.device_id;
 ```
+
 ---
 
 ### Aggregate Functions
@@ -434,7 +448,7 @@ INNER JOIN employees ON machines.device_id = employees.device_id;
 SELECT COUNT(firstname) FROM employees;
 ```
 
-Example – Counting employees from a specific country:
+**Example – Counting employees from a specific country:**
 
 ```sql
 SELECT COUNT(firstname) FROM employees WHERE country = 'USA';
@@ -444,30 +458,123 @@ SELECT COUNT(firstname) FROM employees WHERE country = 'USA';
 
 ### Pro Tips
 
-LIKE with `%`: Use `%` as a wildcard.
-`LIKE 'East-%'` → matches "East-170", "East-320", etc.
-`LIKE 'MEX%'` → matches "MEX" and "MEXICO".
-
-Quotes: String values must be in single quotes (e.g., `'Marketing'`). Numbers and Booleans (`TRUE`/`FALSE`) do not need quotes.
-
-Semicolon: Every SQL statement must end with a `; or the shell will wait for more input.
-
-Table.column notation: When joining tables, use `table.column` to avoid ambiguity (e.g., `machines.device_id` vs `employees.device_id`).
-``
-
+- **LIKE with `%`:** Use `%` as a wildcard.  
+  `LIKE 'East-%'` → matches "East-170", "East-320", etc.  
+  `LIKE 'MEX%'` → matches "MEX" and "MEXICO".
+- **Quotes:** String values must be in single quotes (e.g., `'Marketing'`). Numbers and Booleans (`TRUE`/`FALSE`) do not need quotes.
+- **Semicolon:** Every SQL statement must end with a `;` or the shell will wait for more input.
+- **Table.column notation:** When joining tables, use `table.column` to avoid ambiguity (e.g., `machines.device_id` vs `employees.device_id`).
 
 ---
 
+## 🐍 Python in Cybersecurity
 
+Python is the backbone of my security automation workflow. It allows me to parse logs, update access control lists, and detect threats programmatically. Below is a reference for the core concepts, file handling techniques, regex patterns, and debugging strategies I've used throughout Course 7.
 
-## 🐍 Python Automation Toolkit
+---
 
-| Script | What it does |
-| :--- | :--- |
-| `file_renamer.py` | Add a prefix (`backup_`) to every file in a folder using `os.listdir()` and `os.rename()`. |
-| `text_parser.py` | Count how many lines contain "ERROR" using `open().readlines()` and `if word in line`. |
-| `folder_scanner.py` | Walk through folders and count file extensions using `os.walk()` and `os.path.splitext()`. |
-| `fetch_banditX_password.py` | Use `paramiko` to authenticate with an SSH key when the local CLI fails. |
+### Core Python Syntax
+
+| Concept | Syntax / Example | Purpose |
+| :--- | :--- | :--- |
+| **Variables & Data Types** | `device_id = "72e08x0"` (str), `max_logins = 3` (int), `is_logged_in = False` (bool), `user_list = ["alice", "bob"]` (list) | Store and manage security data (device IDs, thresholds, statuses, allow lists). |
+| **Conditionals** | `if system == "OS 2": print("No update needed") elif system == "OS 1": print("Update needed") else: print("Unknown OS")` | Automate decision-making based on security conditions (e.g., OS version, login time, IP checks). |
+| **Loops** | `for element in remove_list:` | Iterate through lists of IPs, usernames, or log lines to perform bulk actions (removals, counts, searches). |
+| **Functions** | `def update_file(import_file, remove_list):` | Encapsulate reusable logic. I used this to create a modular allow-list updater that can be called with different files. |
+| **`in` Operator** | `if element in ip_addresses:` | Check membership in a list (e.g., verify if an IP is currently in the allow list). |
+| **`.index()` Method** | `ind = approved_users.index(username)` | Find the position of a specific user in a list to retrieve corresponding data from a synchronized list (e.g., their assigned device ID). |
+
+**Example: Authentication Algorithm (From Bandit Lab)**
+```python
+def login(username, device_id):
+    if username in approved_users:
+        ind = approved_users.index(username)
+        if device_id == approved_devices[ind]:
+            print("Access granted.")
+        else:
+            print("Incorrect device.")
+    else:
+        print("User not approved.")
+```
+
+---
+
+### File Handling & Parsing
+
+| Concept | Syntax / Example | Security Application |
+| :--- | :--- | :--- |
+| **Opening Files** | `with open("allow_list.txt", "r") as file:` | Safely open log files or allow lists. The `with` statement automatically closes the file, preventing memory leaks. |
+| **Reading Files** | `ip_addresses = file.read()` | Read the entire contents of a file into a single string for processing. |
+| **Writing Files** | `with open("allow_list.txt", "w") as file: file.write(ip_addresses)` | Overwrite a file with updated data (e.g., after removing unauthorized IPs). |
+| **Appending Files** | `with open("login.txt", "a") as file: file.write(missing_entry)` | Add new entries to a log file without overwriting existing data. |
+| **String to List** | `ip_addresses = ip_addresses.split()` | Convert a space or newline-separated string into a list so that elements can be added or removed individually. |
+| **List to String** | `ip_addresses = "\n".join(ip_addresses)` | Convert a list back into a string for writing to a file. Using `"\n"` ensures each IP address is on a new line. |
+
+**My Lab Example (Allow List Update):**
+```python
+with open("allow_list.txt", "r") as file:
+    ip_addresses = file.read().split()  # Read and split into a list
+
+for element in remove_list:
+    if element in ip_addresses:
+        ip_addresses.remove(element)    # Remove unauthorized IPs
+
+ip_addresses = "\n".join(ip_addresses)  # Convert back to string
+
+with open("allow_list.txt", "w") as file:
+    file.write(ip_addresses)            # Write updated list back to file
+```
+
+---
+
+### Regular Expressions (RegEx)
+
+| Pattern / Function | Example | Security Application |
+| :--- | :--- | :--- |
+| **`re.findall()`** | `re.findall(pattern, log_file)` | Extract all occurrences of a pattern from a string (e.g., all IP addresses or device IDs in a log). |
+| **`\w+`** | `r"r15\w+"` | Match alphanumeric characters. Used to find device IDs starting with "r15" that require updates. |
+| **`\d{1,3}`** | `r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"` | Match valid IPv4 addresses with 1-3 digits per segment. `{1,3}` provides precision without capturing invalid entries like `9999`. |
+| **`\.`** | `\.` | Escape the period character to match literal dots in IP addresses. |
+| **Case Insensitivity** | `search_word.upper() in line.upper()` | Ensure keyword searches are case-insensitive (e.g., finding `"ERROR"` in logs regardless of case). |
+| **Exact Matching** | `if element in remove_list:` | Rely on exact string matching when comparing IP addresses for removal. |
+
+**My Lab Example (IP Extraction):**
+```python
+pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+valid_ip_addresses = re.findall(pattern, log_file)
+```
+
+---
+
+### Debugging Strategies
+
+| Error Type | Example | Fix |
+| :--- | :--- | :--- |
+| **SyntaxError** | `for i in range(10)` (missing colon) | Add a colon (`:`) at the end of the line. |
+| **NameError** | `username_list` vs `usernames_list` | Ensure variable names are consistent and correctly spelled. |
+| **IndexError** | `list[5]` on a list with 5 elements (indices 0-4) | Use `list[-1]` to access the last element safely, or check the list length. |
+| **AttributeError** | `split.ip_addresses()` | Use the correct syntax: `ip_addresses.split()`. The method belongs to the string object. |
+| **IndentationError** | `if True: \n print("Hello")` (improper indentation) | Ensure all code inside blocks (if, for, with) is indented with 4 spaces. |
+| **Logic Error** | `patch_schedule[2]` for "OS 1" (wrong index) | Carefully map indices to data (e.g., `0` for March, `1` for April, `2` for May). |
+
+**Debugging Strategy:** Run your code frequently and fix errors one at a time. Start with syntax errors, then handle exceptions, and finally validate logic with different inputs.
+
+---
+
+### Automation Scripts
+
+| Script | What it does | Key Skills Used |
+| :--- | :--- | :--- |
+| **`file_renamer.py`** | Add a prefix (`backup_`) to every file in a folder. | `os.listdir()`, `os.rename()`, loops. |
+| **`text_parser.py`** | Parses logs to count keywords like "ERROR" case-insensitively. | File I/O, `.upper()`, `in` operator, list iteration. |
+| **`folder_scanner.py`** | Walks through directories and maps file extensions. | `os.walk()`, `os.path.splitext()`, `defaultdict`. |
+| **`log_analyzer.py`** | SIEM‑style parser that flags brute‑force IPs based on a threshold. | `re` module, `defaultdict`, threshold alerting. |
+| **`integrity_checker.py`** | Tripwire‑style file integrity monitor using SHA-256 hashing. | `hashlib`, `os.walk`, baseline comparison. |
+| **`update_file.py`** | Reads an allow list, removes unauthorized IPs, and writes back the updated list. | `with open()`, `.split()`, `.remove()`, `.join()`. |
+
+---
+
+> *This section was built from hands-on labs in the Google Cybersecurity Certificate – Course 7: Automate Cybersecurity Tasks with Python.*
 
 ---
 
@@ -627,7 +734,7 @@ Risk = Likelihood × Impact
 #### Social Engineering Techniques
 
 | Technique | Description |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | **Phishing** | Mass emails impersonating a trusted source. |
 | **Spear Phishing** | Targeted phishing for a specific individual. |
 | **Whaling** | Phishing targeting high‑profile executives. |
@@ -640,7 +747,7 @@ Risk = Likelihood × Impact
 #### Common Malware Types
 
 | Type | Description |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | **Worm** | Self‑replicates and spreads across networks. |
 | **Virus** | Requires a host file and user action to spread. |
 | **Trojan** | Disguised as legitimate software. |
@@ -670,13 +777,12 @@ Risk = Likelihood × Impact
 - Shifts letters by a fixed number (e.g., shift of 3: A→D, B→E).
 - Decoded using `tr` in Linux:
 
- ```bash
-  cat encrypted.txt | tr 'A-Za-z' 'D-ZA-Cd-za-c'
+```bash
+cat encrypted.txt | tr 'A-Za-z' 'D-ZA-Cd-za-c'
 ```
 
 **SHA-256 Hashing**
 - Produces a 256‑bit hash value.
-
 - Used to verify file integrity:
 
 ```bash
@@ -685,7 +791,7 @@ sha256sum file.txt
 
 - Even a tiny change in a file produces a completely different hash.
 
-My lab example: I decrypted a Caesar cipher in Linux using tr and used `sha256sum` to verify that two files were not identical (they had different hashes).
+**My lab example:** I decrypted a Caesar cipher in Linux using `tr` and used `sha256sum` to verify that two files were not identical (they had different hashes).
 
 ---
 
@@ -773,5 +879,3 @@ This section bridges the academic theory from my NCC Level 4 Diploma directly to
 ---
 
 > *This manual was built from real struggles, late-night debugging, and one very persistent student. Keep it close — it will save you hours in the future.* 🔥
-
-
