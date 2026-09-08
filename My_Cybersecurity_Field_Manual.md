@@ -546,16 +546,20 @@ valid_ip_addresses = re.findall(pattern, log_file)
 
 ---
 
-### Debugging Strategies
+### Debugging Strategies (Google Cert — 3 Error Types)
 
-| Error Type | Example | Fix |
-| :--- | :--- | :--- |
-| **SyntaxError** | `for i in range(10)` (missing colon) | Add a colon (`:`) at the end of the line. |
-| **NameError** | `username_list` vs `usernames_list` | Ensure variable names are consistent and correctly spelled. |
-| **IndexError** | `list[5]` on a list with 5 elements (indices 0-4) | Use `list[-1]` to access the last element safely, or check the list length. |
-| **AttributeError** | `split.ip_addresses()` | Use the correct syntax: `ip_addresses.split()`. The method belongs to the string object. |
-| **IndentationError** | `if True: \n print("Hello")` (improper indentation) | Ensure all code inside blocks (if, for, with) is indented with 4 spaces. |
-| **Logic Error** | `patch_schedule[2]` for "OS 1" (wrong index) | Carefully map indices to data (e.g., `0` for March, `1` for April, `2` for May). |
+| Error Type | Definition | Example | Fix |
+| :--- | :--- | :--- | :--- |
+| **Syntax Error** | Code violates the language rules. The script cannot run at all. | `for i in range(10)` (missing colon `:`) | Add the missing colon: `for i in range(10):` |
+| **Logic Error** | Code runs but produces incorrect results. The logic is flawed. | `patch_schedule[2]` for "OS 1" (wrong index) | Map indices correctly: `0` for March, `1` for April, `2` for May. |
+| **Exception** | Syntax is correct, but an error occurs during execution (runtime). | `list[5]` on a 5‑element list (indices 0–4) → `IndexError` | Use `list[-1]` or check the list length with `len()` first. |
+
+> 💡 **Key takeaway from the Google Cert:**  
+> - **Syntax errors** stop your code dead in its tracks.  
+> - **Logic errors** are the trickiest — the code *looks* right, but your assumptions are wrong.  
+> - **Exceptions** happen at runtime (e.g., missing files, wrong variable names, invalid type operations).  
+> 
+> **Debugging strategy:** Run your code frequently. Fix syntax first, then handle exceptions with `try/except`, and finally test inputs to catch logic errors.
 
 **Debugging Strategy:** Run your code frequently and fix errors one at a time. Start with syntax errors, then handle exceptions, and finally validate logic with different inputs.
 
@@ -734,7 +738,7 @@ Risk = Likelihood × Impact
 #### Social Engineering Techniques
 
 | Technique | Description |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | **Phishing** | Mass emails impersonating a trusted source. |
 | **Spear Phishing** | Targeted phishing for a specific individual. |
 | **Whaling** | Phishing targeting high‑profile executives. |
@@ -747,7 +751,7 @@ Risk = Likelihood × Impact
 #### Common Malware Types
 
 | Type | Description |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | **Worm** | Self‑replicates and spreads across networks. |
 | **Virus** | Requires a host file and user action to spread. |
 | **Trojan** | Disguised as legitimate software. |
