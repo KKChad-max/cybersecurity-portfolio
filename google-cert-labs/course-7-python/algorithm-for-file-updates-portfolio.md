@@ -9,6 +9,7 @@
 ## Project Description
 
 In this project, I developed a Python algorithm to automate the updating of an allow list for a healthcare company. The allow list contains IP addresses permitted to access restricted patient records. I was provided with a remove list containing IP addresses that no longer have access. The algorithm reads the allow list file, converts its contents into a list, removes any IP addresses found in the remove list, and updates the file with the revised list. This automation ensures that only authorised employees retain access to sensitive patient data, improving security and operational efficiency.
+
 ---
 
 ## Open the File that Contains the Allow List
