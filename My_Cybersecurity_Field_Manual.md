@@ -419,7 +419,7 @@ SQL is used to interact with relational databases. For security professionals, i
 ### SQL Joins
 
 | Join Type | What it does |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | **INNER JOIN** | Returns only rows that have a match in both tables |
 | **LEFT JOIN** | Returns all rows from the left table, and matches from the right table |
 | **RIGHT JOIN** | Returns all rows from the right table, and matches from the left table |
@@ -548,20 +548,100 @@ valid_ip_addresses = re.findall(pattern, log_file)
 
 ### Debugging Strategies (Google Cert — 3 Error Types)
 
-| Error Type | Definition | Example | Fix |
-| :--- | :--- | :--- | :--- |
-| **Syntax Error** | Code violates the language rules. The script cannot run at all. | `for i in range(10)` (missing colon `:`) | Add the missing colon: `for i in range(10):` |
-| **Logic Error** | Code runs but produces incorrect results. The logic is flawed. | `patch_schedule[2]` for "OS 1" (wrong index) | Map indices correctly: `0` for March, `1` for April, `2` for May. |
-| **Exception** | Syntax is correct, but an error occurs during execution (runtime). | `list[5]` on a 5‑element list (indices 0–4) → `IndexError` | Use `list[-1]` or check the list length with `len()` first. |
+Debugging is a normal part of developing code. Understanding the **three main types of errors** helps you fix issues faster:
 
-> 💡 **Key takeaway from the Google Cert:**  
-> - **Syntax errors** stop your code dead in its tracks.  
-> - **Logic errors** are the trickiest — the code *looks* right, but your assumptions are wrong.  
-> - **Exceptions** happen at runtime (e.g., missing files, wrong variable names, invalid type operations).  
-> 
-> **Debugging strategy:** Run your code frequently. Fix syntax first, then handle exceptions with `try/except`, and finally test inputs to catch logic errors.
+1. **Syntax Errors** – invalid usage of the language (code won't run).
+2. **Logic Errors** – code runs but produces unintended results (wrong output).
+3. **Exceptions** – syntactically correct code that cannot execute at runtime.
 
-**Debugging Strategy:** Run your code frequently and fix errors one at a time. Start with syntax errors, then handle exceptions, and finally validate logic with different inputs.
+---
+
+#### 1. Syntax Errors
+
+A **syntax error** occurs when you break the rules of Python syntax. Common causes:
+- Forgetting a colon `:` after a function or loop header.
+- Missing closing brackets `]`, parentheses `)`, or quotes `"`.
+- Misspelled keywords.
+
+**Example:**
+```python
+message = "You are debugging a syntax error
+print(message)
+```
+- **Error output:** `SyntaxError: EOL while scanning string literal`
+- **Fix:** Add the missing closing quote: `message = "You are debugging a syntax error"`
+
+> 💡 **Note:** `IndentationError` is a subclass of `SyntaxError` — it occurs when indentation is not syntactically correct (e.g., mixing tabs and spaces, or missing indentation after a colon).
+
+---
+
+#### 2. Logic Errors
+
+A **logic error** happens when the code is valid and runs, but the logic produces unintended results. No error message appears — the output is just wrong.
+
+Common causes:
+- Using the wrong operator (e.g., `>=` instead of `>`).
+- Assigning the wrong value in a condition.
+- Incorrect indentation causing a line to execute when you didn't intend it to.
+
+**Example:**
+```python
+login_attempts = 5
+if login_attempts >= 5:   # Should be `login_attempts < 5`
+    print("User has not reached maximum number of login attempts.")
+else:
+    print("User has reached maximum number of login attempts.")
+```
+- **Output:** `"User has not reached maximum number of login attempts."` (which is *false* — 5 attempts *has* reached the max).
+- **Fix:** Change the condition to `login_attempts < 5`.
+
+---
+
+#### 3. Exceptions
+
+An **exception** occurs when code is syntactically correct but cannot be executed at runtime. Python stops and shows an error message with the exception type.
+
+| Exception Type | When does it happen? | Example |
+| :--- | :--- | :--- |
+| **`NameError`** | A variable or function hasn't been defined. | `print(username)` when `username` was never assigned. |
+| **`TypeError`** | An operation is applied to an object of the wrong type. | `"3" + 5` (string + integer) → cannot concatenate. |
+| **`IndexError`** | You try to access an index that does not exist in a sequence (list, tuple, string). | `my_list = [1, 2, 3]; print(my_list[5])` → index out of range. |
+| **`KeyError`** | You try to access a key that does not exist in a dictionary. | `my_dict = {"a": 1, "b": 2}; print(my_dict["c"])` → key not found. |
+| **`AttributeError`** | You try to access an attribute or method that does not exist on an object. | `"hello".splitit()` (no method named `splitit`). |
+
+**Example (NameError):**
+```python
+username = "Jameson"
+month = "March"
+print(username + "is " + month)
+# If 'month' was never defined, you'd get: NameError: name 'month' is not defined
+```
+
+**Example (IndexError):**
+```python
+devices = ["laptop", "phone", "tablet"]
+print(devices[3])   # IndexError: list index out of range (max index is 2)
+```
+
+---
+
+#### 🔧 My Debugging Workflow
+
+| Step | Action |
+| :--- | :--- |
+| 1 | **Run the code frequently** — don't write 50 lines before testing. |
+| 2 | **Read the error message** — it tells you the line number and the error type. |
+| 3 | **Fix syntax errors first** — they stop everything else from running. |
+| 4 | **Reproduce logic errors** — test with different inputs to see where the output breaks. |
+| 5 | **Wrap risky code in `try/except`** — to handle exceptions gracefully (e.g., file not found). |
+| 6 | **Use `print()` statements** — to check variable values at each step (or use a debugger like `pdb`). |
+
+---
+
+> 💡 **Key takeaway from the Google Cybersecurity Certificate:**  
+> - **Syntax errors** = the code is written incorrectly.  
+> - **Logic errors** = the code runs, but your *thinking* is wrong.  
+> - **Exceptions** = the code is correct, but the *situation* (missing file, wrong key, out-of-range index) breaks it.
 
 ---
 
