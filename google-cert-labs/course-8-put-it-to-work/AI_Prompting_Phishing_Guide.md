@@ -17,6 +17,7 @@ In this activity, I used a generative AI tool (Gemini) and the **TCREI prompting
 I started with a very simple prompt, focusing only on the task:
 
 **PROMPT:** 
+
 Write a reference guide on phishing emails and malware.
 
 `Write a reference guide on phishing emails and malware.`
