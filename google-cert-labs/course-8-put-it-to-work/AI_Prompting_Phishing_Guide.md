@@ -75,70 +75,94 @@ You are a cybersecurity analyst at a mid-sized company. Create a comprehensive b
 
 ## Step 4: Final Output — The Reference Guide
 
-Here is the complete guide generated after the refined prompt:
+# Employee Cybersecurity Guide: Spotting Phishing and Malware
+
+Welcome to our cybersecurity quick-reference guide! As part of our team, you are our first line of defense against cyber threats. This guide will help you identify the two most common types of attacks—phishing and malware—and explain exactly what to do if you spot them.
 
 ---
 
-### 📧 Phishing & Malware Reference Guide
+## 1. What Are Phishing and Malware?
 
-#### What is Phishing?
-Phishing is a type of cyberattack where attackers send fraudulent messages (usually via email) that appear to come from a trusted source. The goal is to trick you into:
-- Revealing sensitive information (passwords, credit card numbers).
-- Clicking malicious links.
-- Downloading infected attachments.
+**Phishing:** A digital con game. Attackers send fraudulent emails or messages disguised as legitimate communications (like an alert from Google Workspace or a text from a "delivery company") to trick you into revealing sensitive information or clicking a malicious link.
 
-#### Common Signs of a Phishing Email
+**Malware (Malicious Software):** Harmful software designed to secretly install itself on your computer or phone. Once installed, it can steal company data, spy on your activity, or lock you out of your files until a ransom is paid.
 
-| Sign | Example |
-|------|---------|
-| Urgent or threatening language | "Your account will be suspended in 24 hours. Click here to verify." |
-| Suspicious sender address | `support@arnazon.com` (instead of `support@amazon.com`) |
-| Generic greetings | "Dear Customer" or "Hello User" instead of your full name. |
-| Unexpected attachments | An invoice you weren't expecting, especially `.exe`, `.zip`, `.html`. |
-| Spelling and grammar errors | "We are writing too inform you of a urgent secuirity update." |
-| Requests for personal information | "Please reply with your password to verify your identity." |
-| Mismatched URLs | Hover over the link — it says `https://g00gle.com` instead of `https://google.com`. |
+---
 
-#### Common Signs of a Malware Infection
+## 2. Five Common Signs of a Phishing Email
 
-| Sign | What to look for |
-|------|------------------|
-| Slow performance | Computer takes much longer to start up or open programs. |
-| Unexpected pop-ups | Ads or warning windows appear even when you're not browsing. |
-| Files being modified or deleted | Documents become corrupted or disappear. |
-| Browser homepage changes | Your homepage is changed to an unfamiliar site without your permission. |
-| Unauthorized emails sent | Coworkers receive emails from you that you didn't send. |
-| Security software disabled | Your antivirus is turned off and you can't re-enable it. |
+Cybercriminals are getting smarter, but they usually leave clues. Watch out for these red flags in your Gmail inbox:
 
-#### What to Do If You Suspect an Attack
+- **A False Sense of Urgency or Threats:** Messages that demand immediate action to avoid negative consequences.  
+  *Example:* "Action Required: Your Google Workspace account will be deactivated in 2 hours if you do not verify your password."
 
-| Step | Action |
-|------|--------|
-| 1 | **Do not click any links or download any attachments.** |
-| 2 | **Report it immediately:** Forward the suspicious email to `it-security@company.com`. |
-| 3 | **If you clicked something:** Disconnect from the network (turn off Wi-Fi or unplug Ethernet). |
-| 4 | **Contact IT Support:** Call or submit a ticket to let them know. |
-| 5 | **Change your password** if you entered it on a suspicious site. |
+- **Suspicious Sender Addresses:** The sender's name might look real, but the actual email address is slightly off.  
+  *Example:* The display name says "IT Support," but the email address is `admin-update@company-support.com` instead of an internal `@company.com` address.  
+  `[Insert screenshot of a mismatched email address in Gmail here]`
 
-#### Quick Reference: Phishing vs. Malware
+- **Unexpected Links or Attachments:** Be highly suspicious of unprompted links or unexpected Google Drive sharing notifications from people you don't know (or even from colleagues if the context is weird).  
+  *Example:* An email with a PDF attached titled `Q3_Bonus_Payout_List.pdf`.
 
-| | Phishing | Malware |
-|------|----------|---------|
-| **What is it?** | Deceptive messages trying to steal info. | Malicious software that infects your device. |
-| **How does it get in?** | Email, text, or phone call. | Downloads, attachments, or malicious links. |
-| **What's the goal?** | Steal credentials or financial info. | Steal data, encrypt files, or take control. |
-| **What do I do?** | Report the email. Don't click anything. | Contact IT. Scan with antivirus. |
+- **Generic Greetings and Sign-offs:** Scammers often blast thousands of emails at once and don't know your name.  
+  *Example:* "Dear Valued Employee" or "Dear Customer."
 
-#### Final Tips
-- **When in doubt, throw it out.** If an email seems suspicious, don't interact with it.
-- **Verify before trusting.** Check with the sender via a different communication channel (e.g., call them).
-- **Keep software updated.** Regular updates patch known vulnerabilities.
-- **Use multi-factor authentication (MFA).** Even if your password is stolen, MFA adds an extra layer of protection.
+- **Requests for Sensitive Information:** We will never ask you for your password over email. Legitimate companies won't either.  
+  *Example:* An email directing you to a login page to "update your billing information."
 
-[Insert screenshot of a suspicious email example here]
+---
 
-#### Need Help?
-If you're unsure whether an email is legitimate, contact IT Security at `it-security@company.com` or call the help desk at [Insert phone number].
+## 3. Spotting Phishing on Mobile Devices
+
+Mobile devices present unique challenges because smaller screens make it harder to spot fake URLs or sender details. Watch out for:
+
+- **Smishing (SMS Phishing):** Urgent text messages claiming you have a missed package delivery, a locked bank account, or a mandatory security update.
+
+- **Hidden URLs:** On a phone, you can't just "hover" over a link. **Tip:** Press and hold a link (without tapping to open it) to see a preview of the actual web address before you decide to visit it.
+
+- **Fake App Notifications:** Pop-ups or text messages that look like system alerts telling you to download a "security patch." Always update apps directly through your device's official app store.  
+  `[Insert screenshot of a fake package delivery text message here]`
+
+---
+
+## 4. Five Signs Your Computer May Be Infected with Malware
+
+If you accidentally click a bad link, malware might install itself in the background. Look out for these warning signs:
+
+- **Sudden Sluggishness:** Your computer, browser, or Google Workspace apps are running incredibly slow or freezing frequently.
+
+- **Unexpected Pop-ups:** You see strange error messages, warnings, or advertisements popping up on your screen, even when you aren't browsing the web.
+
+- **Browser Redirects:** When you try to search for something, your web browser takes you to a completely different, strange-looking website.
+
+- **Disabled Security Tools:** Your antivirus software is suddenly turned off, and you cannot turn it back on.
+
+- **Unusual Account Activity:** Friends or colleagues tell you they are receiving strange emails or shared Google Docs from your account that you never sent.  
+  `[Insert screenshot of an unexpected system pop-up here]`
+
+---
+
+## 5. What to Do If You Suspect an Attack
+
+If something feels off, trust your gut. Take these exact steps to protect yourself and the company:
+
+1. **Do Not Click:** Never click links, download attachments, or reply to a suspicious email or text.
+
+2. **Report the Email:** Forward the suspicious email directly to our IT support team at `it-security@company.com`.
+
+3. **Use the Gmail Tool:** After forwarding, use the native Gmail feature by clicking the three dots in the top right corner of the email and selecting **"Report phishing."**
+
+4. **Disconnect and Call (For Malware):** If you suspect your computer is already infected (e.g., you clicked a link and strange things are happening), disconnect from the Wi-Fi immediately and call the IT helpdesk from your phone. Do not turn the computer off unless instructed by IT.
+
+---
+
+## 6. Quick Reference: Phishing vs. Malware
+
+| Feature | Phishing | Malware |
+|---------|----------|---------|
+| **What is it?** | A fake message designed to trick you. | Harmful software that infects your device. |
+| **How does it arrive?** | Email, text messages, or direct messages. | Hidden in email attachments, malicious links, or infected websites. |
+| **Primary Goal** | To steal your passwords, data, or money. | To damage your system, steal files, or hold your computer hostage. |
+| **Your Defense** | Skepticism, verifying senders, and reporting to IT. | Not clicking suspicious links and keeping your system updated. |
 
 ---
 
