@@ -8,7 +8,7 @@
 
 ## Activity Overview
 
-In this activity, I used a generative AI tool (Gemini) and the **TCEB prompting framework** (Thoughtfully, Create, Really, Excellent, Inputs) to create a reference guide for employees on identifying phishing emails and signs of malware. The goal was to produce a practical, easy-to-understand document that non-technical staff could use daily.
+In this activity, I used a generative AI tool (Gemini) and the **TCREI prompting framework** (Task, Context, References, Evaluate, Iterate) to create a reference guide for employees on identifying phishing emails and signs of malware. The goal was to produce a practical, easy-to-understand document that non-technical staff could use daily.
 
 ---
 
@@ -42,7 +42,7 @@ This evaluation guided my refinements.
 
 ## Step 3: Revised and Refined Prompt
 
-I applied the full TCEB framework to create a detailed prompt:
+I applied the full TCREI framework to create a detailed prompt:
 
 
 ### Phishing & Malware Reference Guide — Prompt
