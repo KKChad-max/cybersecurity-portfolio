@@ -153,42 +153,21 @@ After reviewing the final output, I considered further iterations:
 However, the current version already met the core goals: it is comprehensive, audience-appropriate, actionable, and well-structured.
 
 ---
+## Reflection Question
 
-## Step 6: Questions and Submission
-
-### 1. Which parts of the prompting framework did you find most useful? Select all that apply.
-
-- [x] Task (including persona and format)
-- [x] Context
-- [x] References
-- [x] Evaluate
-- [x] Iterate
-
-*(All five were useful; the framework is holistic.)*
-
----
-
-### 2. Submit the prompt you felt best satisfied your goal and provided enough relevant specificity, context, and references to produce a useful and effective output.
-
-**Answer:** Yes, I used the final refined prompt shown in Step 3.
-
----
-
-### 3. What do you think?
+### What do you think?
 
 The final guide is practical and ready to share. It balances technical accuracy with plain language, includes clear examples, and gives employees a straightforward action plan. It demonstrates how generative AI can accelerate content creation when guided by a thoughtful prompt.
 
----
 
-### 4. How did evaluating and iterating affect the final output? Write 1-2 sentences.
+### How did evaluating and iterating affect the final output? Write 1-2 sentences.
 
 Evaluating the initial output revealed that it lacked audience awareness, structure, and practical examples. Iterating by adding context (company tools, audience, format) transformed a generic list into a targeted, user-friendly reference guide that employees can actually use.
 
----
 
-### 5. What do you think?
+### What do you think?
 
-This exercise reinforced the value of structured prompting. By systematically applying the TCEB framework, I turned a vague AI response into a polished, professional document. I am now more confident using generative AI to support my cybersecurity tasks efficiently.
+This exercise reinforced the value of structured prompting. By systematically applying the TCREI framework, I turned a vague AI response into a polished, professional document. I am now more confident using generative AI to support my cybersecurity tasks efficiently.
 
 ---
 
