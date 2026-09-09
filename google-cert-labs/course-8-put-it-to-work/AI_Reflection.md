@@ -1,10 +1,6 @@
 # Module Reflection: Leveraging AI in Cybersecurity
 
-## Question: Reflecting on the content of this module, do you now see specific ways you could leverage AI to make tasks like identifying bugs, refining code, and better understanding potential vulnerabilities easier in your cybersecurity work? Can you think of other ways that you might use AI to help with cybersecurity tasks?
-
----
-
-## ✅ Answer: Yes, I have a better understanding of how to use AI to help with cybersecurity workflows.
+I have a better understanding of how to use AI to help with cybersecurity workflows.
 
 ---
 
