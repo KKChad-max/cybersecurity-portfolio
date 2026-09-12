@@ -13,7 +13,9 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 | **OPSWAT Introduction to Critical Infrastructure Protection (ICIP)** | ✅ Earned (Expires Aug 2027) |
 | **OverTheWire Bandit 0–25** | ✅ Completed & Documented |
 | **NCC Level 4 Diploma in Computing** | ✅ **Completed (8 Modules)** |
-| **CompTIA Security+ (SY0-701)** | 🎯 Targeting September/October 2026 |
+| **LetsDefend SOC Analyst Learning Path** | 🚧 **In Progress (12%)** |
+| **CompTIA Security+ (SY0-701)** | 🎯 Targeting November/December 2026 |
+
 ---
 
 ## ✅ Phase 0 & Phase 1 Completed (July – August 2026)
@@ -31,7 +33,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 ## 📂 Portfolio Contents
 
 - **[NCC Level 4 Diploma in Computing](/ncc-diploma-computing/)**
-8 academic modules covered
+  8 academic modules covered
   - Computer Systems,
   - Computer Networks,
   - Databases, Object Oriented Design and Analysis,
@@ -60,6 +62,10 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 - **[TryHackMe Writeups](/tryhackme-writeups)** *(In Progress)*
   - Practical network & exploit lab walkthroughs.
 
+- **[HackTheBox (LetsDefend)](/HackTheBox/LetsDefend)** ✅ **NEW**
+  - SOC Analyst incident reports and alert investigations. 
+  - Includes phishing analysis (Excel 4.0 Macros), C2 traffic investigation, and endpoint containment documentation.
+
 - **[OT/ICS Case Study](/ot-ics-case-study)** *(In Progress)*
   - Industrial control systems security research.
 
@@ -74,6 +80,7 @@ I maintain a personal **[My_Cybersecurity_Field_Manual.md](/My_Cybersecurity_Fie
 Building a strong foundation in **network security, Linux, SQL, Python, and critical infrastructure protection** to pursue a role as a **Security Analyst**. 
 
 **Next up:**
+- Completing more LetsDefend (HackTheBox) SOC incidents and investigations.
 - TryHackMe rooms and advanced defensive security tools.
 - Completing the Google Cybersecurity Certificate (Courses 7–9).
 - Completing the Google AI Professional Certificate (Courses 5–8).
@@ -88,3 +95,4 @@ Building a strong foundation in **network security, Linux, SQL, Python, and crit
 - **[VirtualBox](https://www.virtualbox.org/)** – For the home lab environment.
 - **[OPSWAT Academy](https://www.opswat.com/academy)** – For the Critical Infrastructure Protection training.
 - **[Google](https://www.coursera.org/google)** – For the Cybersecurity and AI Professional Certificates.
+- **[LetsDefend](https://letsdefend.io/) & [Hack The Box](https://www.hackthebox.com/)** – For the SOC Analyst training platform and incident simulations.
