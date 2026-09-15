@@ -4,6 +4,7 @@
 **Date Completed:** September 12, 2026  
 **Role:** SOC Analyst  
 **Difficulty:** Easy  
+**Severity:** High  
 **MITRE ATT&CK:** T1566 (Phishing)  
 **Result:** True Positive  
 
