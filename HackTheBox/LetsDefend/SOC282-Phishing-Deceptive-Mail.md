@@ -4,7 +4,7 @@
 **Event ID:** 257  
 **Date Completed:** September 15, 2026  
 **Role:** SOC Analyst  
-**Severity:** Medium
+**Severity:** Medium 
 **MITRE ATT&CK:** T1566 (Phishing), T1566.002 (Spearphishing Link), T1059 (Command and Scripting Interpreter), T1204 (User Execution)  
 **Result:** True Positive  
 
