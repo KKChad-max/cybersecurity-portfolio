@@ -22,9 +22,12 @@ Extracted the following details from the email:
 - **Attachment:** `free-coffee.zip` (Password: `infected`)
 - **Device Action:** `Allowed`
 
-### 2. Endpoint Security Analysis (Critical Evidence)
+### 2. Endpoint Security Analysis (Deep Dive)
 Navigated to Endpoint Security and analyzed the victim's machine (`Felix` / `172.16.20.151`):
-- **Terminal History:** Showed the execution of `cmd.exe` followed by a series of reconnaissance commands:
+- **Malicious Process:** `coffee.exe` 
+- **Process ID (PID):** `6697`
+- **Image Hash (SHA-256):** `CD903AD2211CF7D166646D75E57FB866000F4A3B870B5EC759929BE2FD81D334`
+- **Child Processes:** `cmd.exe` spawned **7 child processes**, which executed the following reconnaissance commands:
   - `systeminfo`
   - `hostname`
   - `wmic logicaldisk get caption,description,providername`
@@ -33,7 +36,6 @@ Navigated to Endpoint Security and analyzed the victim's machine (`Felix` / `172
   - `ipconfig /all`
   - `route print`
 - **Network Action:** Showed numerous outbound connections to external IPs, including the confirmed C2 server (`37.120.233.226`).
-- **Malicious Process:** Identified `coffee.exe` as the process communicating with the C2 server.
 
 ### 3. Log Management Analysis
 Queried Log Management for the attacker's IP (`103.80.134.63`). Found the Exchange event confirming the email was delivered from `free@coffeeshooop.com` to `Felix@letsdefend.io`.
@@ -41,7 +43,7 @@ Queried Log Management for the attacker's IP (`103.80.134.63`). Found the Exchan
 ## 🧠 Attack Success Analysis
 The attack was **Successful**. 
 
-The endpoint logs proved that the malicious attachment was executed. The attacker gained a foothold on the system, established C2 communication via `coffee.exe` to `37.120.233.226`, and performed system discovery using native Windows commands.
+The endpoint logs proved that the malicious attachment (`coffee.exe`, PID 6697) was executed. The malware spawned `cmd.exe`, which then executed 7 reconnaissance commands. The process `coffee.exe` successfully established C2 communication with `37.120.233.226`.
 
 ## 🛡️ Actions Taken
 - **Containment:** Isolated the compromised endpoint (`Felix` / `172.16.20.151`) via Endpoint Security to prevent lateral movement.
@@ -49,16 +51,17 @@ The endpoint logs proved that the malicious attachment was executed. The attacke
     - Sender Email: `free@coffeeshooop.com`
     - SMTP IP: `103.80.134.63`
     - Malicious Attachment: `free-coffee.zip`
+    - Malicious Process: `coffee.exe` (PID: `6697`)
+    - Malware Hash (SHA-256): `CD903AD2211CF7D166646D75E57FB866000F4A3B870B5EC759929BE2FD81D334`
     - C2 IP: `37.120.233.226`
-    - Malicious Process: `coffee.exe`
     - Compromised Host: `172.16.20.151`
 - **Escalation:** Escalated the incident to Tier 2 for malware analysis, forensic investigation, and remediation.
 
 ## 🧠 Key Takeaways & Lessons Learned
 1. **Phishing Can Lead to Full Compromise:** A deceptive email with a malicious attachment can result in full endpoint compromise and C2 communication.
-2. **Reconnaissance Commands are a Red Flag:** The execution of system discovery commands (`systeminfo`, `net user`, etc.) from a `cmd.exe` process is a strong indicator of post-exploitation activity.
-3. **C2 Communication Identification:** Identifying the specific process (`coffee.exe`) that communicates with a C2 server is crucial for understanding the malware's behavior and for future threat hunting.
-4. **Endpoint Containment is Critical:** Isolating the compromised machine is the first and most important step to prevent the attacker from moving laterally or exfiltrating data.
+2. **Process Lineage is Key:** Identifying the PID and Image Hash of the malicious process (`coffee.exe`) is essential for threat intelligence and endpoint blocking.
+3. **Child Process Analysis Reveals Intent:** The 7 child processes spawned by `cmd.exe` revealed the attacker's goal: system reconnaissance. This is a classic post-exploitation tactic.
+4. **C2 Communication Identification:** Identifying the specific process (`coffee.exe`) that communicates with a C2 server is crucial for understanding the malware's behavior and for future threat hunting.
 
 ---
 *This report was completed as part of the LetsDefend SOC Analyst training platform.*
