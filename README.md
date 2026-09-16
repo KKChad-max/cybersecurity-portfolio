@@ -8,9 +8,9 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 I've been around technology since my young age, but for most of those years, I understood it as a *user*, not as a practitioner.
 
-Pursuing Electrical Engineering taught me something about myself. I could reason through circuit logic far more naturally than through the abstractions of Computer Science and IT. That bothered me enough to ask a question that eventually changed my career:
+Pursuing Electrical Engineering taught me something about myself. I could reason through circuit logic far more naturally than through the abstractions of Computer Science logic. That bothered me enough to ask a question that eventually changed my career:
 
-> *"Why do I understand electrical logic more than Computer Science and IT in general?"*
+> *"Why do I understand electrical logic more than Computer Science logic"*
 
 The answer wasn't that one was easier. It was that the field I was circling, cybersecurity, isn't really *about computers*. It's about **information**: how it moves, who can touch it, what breaks when it's wrong, and what it costs when it's lost. That's a much wider domain than machines. It's computer science, IT, governance, human behavior, and physical systems all converging.
 
