@@ -97,7 +97,7 @@ Linux Fundamentals · Python Automation · Home Lab · Google Cybersecurity (9/9
 
 - **[NCC Level 4 Diploma](/ncc-diploma-computing/)** — 8 academic modules (Computer Systems, Networks, Databases, OOP, Software Engineering, Front-End, Algorithms)
 - **[Linux Fundamentals](/linux-fundamentals)** — OverTheWire Bandit 0–25 writeup
-- **[Python Practice](/python-practice)** — 6 automation scripts (log analyzer, integrity checker, file renamer, parsers)
+- **[Python Practice](/python-practice)** — 5 automation scripts (log analyzer, integrity checker, file renamer, parsers)
 - **[Home Lab](/home-lab)** — VirtualBox + Ubuntu LTS VM setup
 - **[Google Cert Labs](/google-cert-labs)** — All 9 courses: audits, incident reports, SQL labs, hashing, cryptography, threat models
 - **[HackTheBox (LetsDefend)](/HackTheBox/LetsDefend)** — SOC Analyst incident investigations (phishing, SQLi, XSS, IDOR, LFI, malware analysis)
