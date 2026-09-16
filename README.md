@@ -6,13 +6,13 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 ## 🧑‍💻 About Me
 
-I've been around computers since 2004 — but for most of those years, I understood them as a *user*, not as an engineer.
+I've been around computers since 2004, but for most of those years, I understood them as a *user*, not as an engineer.
 
 Pursuing Electrical Engineering taught me something about myself. I could reason through circuit logic far more naturally than the abstractions of Computer Science and IT. That bothered me enough to ask a question that eventually changed my career:
 
 > *"Why do I understand electrical logic more than Computer Science and IT in general?"*
 
-The answer wasn't that one was easier — it was that rigidity hides complexity, and flexibility hides it too. That question didn't push me away from tech. It pulled me toward it, especially as every sector (energy, healthcare, finance) goes digital.
+The answer wasn't that one was easier, it was that rigidity hides complexity, and flexibility hides it too. That question didn't push me away from tech. It pulled me toward it, especially as every sector (energy, healthcare, finance) goes digital.
 
 Cybersecurity is where that convergence matters most. It's where I can use the rigor of engineering, the logic of code, and the responsibility of protecting real systems, all at once.
 
