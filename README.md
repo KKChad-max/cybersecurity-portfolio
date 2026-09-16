@@ -14,7 +14,7 @@ Pursuing Electrical Engineering taught me something about myself. I could reason
 
 The answer wasn't that one was easier. It was that the field I was circling, cybersecurity, isn't really *about computers*. It's about **information**: how it moves, who can touch it, what breaks when it's wrong, and what it costs when it's lost. That's a much wider domain than machines. It's computer science, IT, governance, human behavior, and physical systems all converging.
 
-That realization pulled me in rather than pushing me away. As every sector digitizes (energy, healthcare, finance, transport), the gap between physical logic and digital logic is exactly where risk lives. Cybersecurity is where I want to work on that gap directly.
+That realization pulled me in rather than pushing me away. As every sector digitizes and digitalizes (energy, healthcare, finance, transport), the gap between physical logic and digital logic is exactly where risk lives. Cybersecurity is where I want to work on that gap directly.
 
 My goal: land a role as a **Security Analyst** and keep growing on the blue team side.
 
