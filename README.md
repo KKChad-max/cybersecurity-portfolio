@@ -34,6 +34,7 @@ My goal: land a role as a **Security Analyst** and keep growing on the blue team
 | **TryHackMe SAL1** | 🎯 Targeting November 2026 |
 | **CompTIA Security+ (SY0-701)** | 🎯 Targeting December 2026 |
 | **HTB Silver Certifications (5 exams)** | 🎯 Targeting Dec 2026 – Mar 2027 |
+| **TryHackMe SAL2** | 🎯 Targeting April 2027 |
 
 ---
 
