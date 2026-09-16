@@ -4,6 +4,7 @@
 **Event ID:** 93  
 **Date Completed:** September 12, 2026  
 **Role:** SOC Analyst  
+**Severity:** High  
 **Difficulty:** Easy  
 **MITRE ATT&CK:** T1566 (Phishing), T1204.002 (Malicious File), T1059 (Command and Scripting Interpreter)  
 **Result:** True Positive  

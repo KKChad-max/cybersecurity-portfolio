@@ -15,6 +15,7 @@ LetsDefend (now part of Hack The Box) is a hands-on blue team training platform 
 | **SOC168 - Whoami Command Detected in Request Body** | High | Web Attack | T1190 | ✅ True Positive | [View Report](./SOC168-Whoami-Command-Injection.md) |
 | **SOC169 - Possible IDOR Attack Detected** | Medium | Web Attack | T1190 | ✅ True Positive | [View Report](./SOC169-IDOR-Attack.md) |
 | **SOC170 - Passwd Found in Requested URL - Possible LFI Attack** | High | Web Attack | T1190 | ✅ True Positive | [View Report](./SOC170-LFI-Attack.md) |
+| **SOC282 - Phishing Alert - Deceptive Mail Detected** | Medium | Exchange | T1566 | ✅ True Positive | [View Report](./SOC282-Phishing-Deceptive-Mail.md) |
 
 *(More reports will be added as I progress through the platform.)*
 
