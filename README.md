@@ -96,7 +96,7 @@ I maintain a personal **[My_Cybersecurity_Field_Manual.md](/My_Cybersecurity_Fie
 ---
 
 ## 🎯 Current Goal
-Building a strong foundation in **network security, Linux, SQL, Python, and critical infrastructure protection** to pursue a role as a **Security Analyst**. 
+Building a strong foundation in **network security, Linux, SQL, Python, and critical infrastructure protection** to pursue a role in **CyberSecurity Field**. 
 
 **Next up (Phase 2 Roadmap):**
 - Completing the LetsDefend SOC Analyst Learning Path.
