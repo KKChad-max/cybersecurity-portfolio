@@ -40,7 +40,7 @@ Initially, searching Log Management for the SMTP IP (`24.213.228.54`) yielded no
    - **Confirmed Execution:** The macro executed and established C2 communication within 9 minutes of the email being delivered.
 
 ## 🧠 Attack Success Analysis
-The attack was **Successful**. 
+The attack was **Successful.** 
 
 The endpoint logs proved that the malicious Excel file was opened and executed. The `excel.exe` process initiated a connection to the C2 server (`188.213.19.81`), and `regsvr32` was executed—a known technique for downloading and running secondary payloads. This confirms full endpoint compromise.
 
