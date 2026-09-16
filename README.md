@@ -44,7 +44,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 | :--- | :--- | :--- |
 | **Sept – Oct 20** | LetsDefend | Complete the LetsDefend SOC Analyst Learning Path |
 | **Beginning of October** | ISC² CC Exam | Earn the ISC² Certified in Cybersecurity credential |
-| **Early November** | TryHackMe SAL1 Exam | Complete TryHackMe rooms and earn the SAL1 certification |
+| **Early November** | TryHackMe and SAL1 Exam | Complete TryHackMe rooms and earn SAL1 certification |
 | **Early December** | CompTIA Security+ | Pass the CompTIA Security+ (SY0-701) exam |
 | **Late December 2026 – March 2027** | HackTheBox | Complete the following HTB certification exams: <br>• HTB Certified Junior Cybersecurity Associate <br>• HTB Certified Penetration Testing Specialist <br>• HTB Certified Web Exploitation Specialist <br>• HTB Certified Defensive Security Analyst <br>• HTB Certified Offensive AI Expert |
 
