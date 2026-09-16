@@ -8,25 +8,45 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 | Badge | Status |
 | :--- | :--- |
-| **Google Cybersecurity Professional Certificate** | 7 of 9 Courses ✅ Completed |
+| **Google Cybersecurity Professional Certificate** | ✅ **Completed (9/9 Courses)** |
 | **Google AI Professional Certificate** | 4 of 8 Courses ✅ Completed |
 | **OPSWAT Introduction to Critical Infrastructure Protection (ICIP)** | ✅ Earned (Expires Aug 2027) |
 | **OverTheWire Bandit 0–25** | ✅ Completed & Documented |
 | **NCC Level 4 Diploma in Computing** | ✅ **Completed (8 Modules)** |
-| **LetsDefend SOC Analyst Learning Path** | 🚧 **In Progress (12%)** |
-| **CompTIA Security+ (SY0-701)** | 🎯 Targeting November/December 2026 |
+| **LetsDefend SOC Analyst Learning Path** | 🚧 In Progress |
+| **ISC² Certified in Cybersecurity (CC)** | 🎯 Targeting October 2026 |
+| **TryHackMe SAL1** | 🎯 Targeting November 2026 |
+| **CompTIA Security+ (SY0-701)** | 🎯 Targeting December 2026 |
+| **HTB Certified Junior Cybersecurity Associate** | 🎯 Targeting December 2026 |
+| **HTB Certified Penetration Testing Specialist** | 🎯 Targeting January 2027 |
+| **HTB Certified Web Exploitation Specialist** | 🎯 Targeting January 2027 |
+| **HTB Certified Defensive Security Analyst** | 🎯 Targeting February 2027 |
+| **HTB Certified Offensive AI Expert** | 🎯 Targeting March 2027 |
 
 ---
 
-## ✅ Phase 0 & Phase 1 Completed (July – August 2026)
+## 📅 Phase 1 (Completed: July – September 2026)
 
 - **Linux Fundamentals:** Completed OverTheWire Bandit Levels **0–25** (Full writeup included).
 - **Python Automation:** Built 6 practical scripts (`file_renamer`, `text_parser`, `folder_scanner`, `hello`, `log_analyzer`, `integrity_checker`).
 - **Home Lab:** VirtualBox installed with Ubuntu LTS VM (Guest Additions & shared clipboard configured).
-- **Google Cybersecurity Certificate:** Completed Courses **1–4** (Foundations, Risk Management, Networks, Tools).
-- **Google AI Professional Certificate:** Completed 3 courses (Fundamentals, Brainstorming, Research & Insights).
+- **Google Cybersecurity Certificate:** ✅ **Completed all 9 courses** (Foundations, Risk Management, Networks, Tools, SQL, Linux, Python, Assets/Threats, and Capstone).
+- **Google AI Professional Certificate:** Completed 4 courses.
 - **Critical Infrastructure:** Completed OPSWAT Introduction to Critical Infrastructure Protection (ICIP).
 - **Documentation:** Published a detailed "Cybersecurity Field Manual" covering Linux, SQL, Python, and troubleshooting.
+- **SOC Analyst Training (LetsDefend):** Completed multiple incident investigations covering phishing, SQL injection, XSS, IDOR, LFI, command injection, malware analysis, and false positives.
+
+---
+
+## 📅 Phase 2 (In Progress: September – December 2026)
+
+| Period | Focus | Goal |
+| :--- | :--- | :--- |
+| **Sept – Oct 20** | LetsDefend VIP (1 month) | Complete the LetsDefend SOC Analyst Learning Path |
+| **Beginning of October** | ISC² CC Exam (Google One Million Program) | Earn the ISC² Certified in Cybersecurity credential |
+| **Early November** | TryHackMe Premium (1 month) + SAL1 Exam | Complete TryHackMe rooms and earn the SAL1 certification |
+| **Early December** | CompTIA Security+ (with Google Discount) | Pass the CompTIA Security+ (SY0-701) exam |
+| **Late December 2026 – March 2027** | HackTheBox Silver Annual | Complete the following HTB certification exams: <br>• HTB Certified Junior Cybersecurity Associate <br>• HTB Certified Penetration Testing Specialist <br>• HTB Certified Web Exploitation Specialist <br>• HTB Certified Defensive Security Analyst <br>• HTB Certified Offensive AI Expert |
 
 ---
 
@@ -56,15 +76,14 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
   - VirtualBox + Ubuntu LTS VM setup. Check `setup-notes.md` for hardware specs and Guest Additions configuration.
 
 - **[Google Cert Labs](/google-cert-labs)**
-  - **Courses 1–7 completed** with detailed notes, incident reports, security audits, and SQL/Linux portfolio activities.
-  - **Courses 5–8** – In Progress.
+  - **All 9 courses completed** with detailed notes, incident reports, security audits, and SQL/Linux portfolio activities.
 
-- **[TryHackMe Writeups](/tryhackme-writeups)** *(In Progress)*
+- **[TryHackMe Writeups](/tryhackme-writeups)** *(In Progress – Starting November 2026)*
   - Practical network & exploit lab walkthroughs.
 
-- **[HackTheBox (LetsDefend)](/HackTheBox/LetsDefend)** ✅ **NEW**
-  - SOC Analyst incident reports and alert investigations. 
-  - Includes phishing analysis (Excel 4.0 Macros), C2 traffic investigation, and endpoint containment documentation.
+- **[HackTheBox (LetsDefend)](/HackTheBox/LetsDefend)** ✅ **Active**
+  - SOC Analyst incident reports and alert investigations.
+  - Includes phishing analysis (Excel 4.0 Macros), SQL Injection, XSS, IDOR, LFI, Command Injection, malware analysis (PowerShell decoding), C2 traffic investigation, and endpoint containment documentation.
 
 - **[OT/ICS Case Study](/ot-ics-case-study)** *(In Progress)*
   - Industrial control systems security research.
@@ -79,12 +98,12 @@ I maintain a personal **[My_Cybersecurity_Field_Manual.md](/My_Cybersecurity_Fie
 ## 🎯 Current Goal
 Building a strong foundation in **network security, Linux, SQL, Python, and critical infrastructure protection** to pursue a role as a **Security Analyst**. 
 
-**Next up:**
-- Completing more LetsDefend (HackTheBox) SOC incidents and investigations.
-- TryHackMe rooms and advanced defensive security tools.
-- Completing the Google Cybersecurity Certificate (Courses 7–9).
-- Completing the Google AI Professional Certificate (Courses 5–8).
-- Preparing for the **CompTIA Security+** certification exam (targeting September/October 2026).
+**Next up (Phase 2 Roadmap):**
+- Completing the LetsDefend SOC Analyst Learning Path.
+- Earning the ISC² Certified in Cybersecurity (CC) credential.
+- Completing TryHackMe rooms and earning the SAL1 certification.
+- Passing the CompTIA Security+ (SY0-701) exam.
+- Completing the five HackTheBox Silver Annual certification exams (Dec 2026 – Mar 2027).
 
 ---
 
@@ -96,3 +115,5 @@ Building a strong foundation in **network security, Linux, SQL, Python, and crit
 - **[OPSWAT Academy](https://www.opswat.com/academy)** – For the Critical Infrastructure Protection training.
 - **[Google](https://www.coursera.org/google)** – For the Cybersecurity and AI Professional Certificates.
 - **[LetsDefend](https://letsdefend.io/) & [Hack The Box](https://www.hackthebox.com/)** – For the SOC Analyst training platform and incident simulations.
+- **[TryHackMe](https://tryhackme.com/)** – For practical hands-on labs.
+- **[CompTIA](https://www.comptia.org/)** – For the Security+ certification path.
