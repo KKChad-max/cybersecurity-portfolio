@@ -42,11 +42,11 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 | Period | Focus | Goal |
 | :--- | :--- | :--- |
-| **Sept – Oct 20** | LetsDefend VIP (1 month) | Complete the LetsDefend SOC Analyst Learning Path |
-| **Beginning of October** | ISC² CC Exam (Google One Million Program) | Earn the ISC² Certified in Cybersecurity credential |
-| **Early November** | TryHackMe Premium (1 month) + SAL1 Exam | Complete TryHackMe rooms and earn the SAL1 certification |
-| **Early December** | CompTIA Security+ (with Google Discount) | Pass the CompTIA Security+ (SY0-701) exam |
-| **Late December 2026 – March 2027** | HackTheBox Silver Annual | Complete the following HTB certification exams: <br>• HTB Certified Junior Cybersecurity Associate <br>• HTB Certified Penetration Testing Specialist <br>• HTB Certified Web Exploitation Specialist <br>• HTB Certified Defensive Security Analyst <br>• HTB Certified Offensive AI Expert |
+| **Sept – Oct 20** | LetsDefend | Complete the LetsDefend SOC Analyst Learning Path |
+| **Beginning of October** | ISC² CC Exam | Earn the ISC² Certified in Cybersecurity credential |
+| **Early November** | TryHackMe SAL1 Exam | Complete TryHackMe rooms and earn the SAL1 certification |
+| **Early December** | CompTIA Security+ | Pass the CompTIA Security+ (SY0-701) exam |
+| **Late December 2026 – March 2027** | HackTheBox | Complete the following HTB certification exams: <br>• HTB Certified Junior Cybersecurity Associate <br>• HTB Certified Penetration Testing Specialist <br>• HTB Certified Web Exploitation Specialist <br>• HTB Certified Defensive Security Analyst <br>• HTB Certified Offensive AI Expert |
 
 ---
 
