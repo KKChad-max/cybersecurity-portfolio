@@ -6,7 +6,7 @@ I'm an Electrical Engineering Technologist / IT Tech transitioning into **Cybers
 
 ## 🧑‍💻 About Me
 
-I've been around computers since 2004, but for most of those years, I understood them as a *user*, not as an engineer.
+I've been around technology since my young age, but for most of those years, I understood it as a *user*, not as an engineer.
 
 Pursuing Electrical Engineering taught me something about myself. I could reason through circuit logic far more naturally than the abstractions of Computer Science and IT. That bothered me enough to ask a question that eventually changed my career:
 
